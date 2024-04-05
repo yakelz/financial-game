@@ -1,0 +1,17 @@
+.button {
+	position: fixed;
+	top: 30px;
+	left: 30px;
+}
+
+.button svg {
+	width: 150;
+	height: 150px;
+}
+
+@media (max-width: 1024px) {
+	.button svg {
+		width: 90px;
+		height: 90px;
+	}
+}

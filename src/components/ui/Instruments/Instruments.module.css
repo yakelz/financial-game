@@ -1,0 +1,17 @@
+.instruments {
+	display: flex;
+	gap: 50px;
+	padding: 25px;
+	border-radius: 20px;
+	background-color: #302348;
+}
+
+@media (max-width: 1024px) {
+	.instruments {
+		gap: 30px;
+		padding: 10px;
+	}
+	.instruments img {
+		width: 40px;
+	}
+}

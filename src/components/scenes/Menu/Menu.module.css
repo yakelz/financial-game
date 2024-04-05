@@ -1,0 +1,21 @@
+@font-face {
+	font-family: 'Hacked';
+	src: url('./Fonts/hacked.woff2') format('woff2'), url('./Fonts/hacked.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+.title {
+	background-color: #0b5681;
+	padding: 30px 100px;
+	padding-left: 200px;
+	border-radius: 100px;
+	box-shadow: 10px 10px 0px rgba(0, 0, 0, 0.2);
+
+	font-family: 'Hacked';
+	font-size: 200px;
+
+	position: fixed;
+	top: 35%;
+	left: 25%;
+}
