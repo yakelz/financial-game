@@ -3,6 +3,7 @@ import FrontView from './views/Front/Front';
 import BackView from './views/Back/Back';
 import TableView from './views/Table/Table';
 import DoorView from './views/Door/Door';
+import Computer from '../Computer/Computer';
 
 import ViewContext from '@utils/ViewContext';
 import { useAudio } from '@utils/AudioContext';
@@ -26,6 +27,8 @@ function Office() {
 				return <TableView />;
 			case 'door':
 				return <DoorView />;
+			case 'computer':
+				return <Computer />;
 			default:
 				return <FrontView />;
 		}
@@ -33,14 +36,7 @@ function Office() {
 
 	return (
 		<ViewContext.Provider value={{ setCurrentView }}>
-			<main>
-				<div style={{ placeItems: 'center', display: 'flex' }}>
-					<button onClick={() => setCurrentView('front')}>Front</button>
-					<button onClick={() => setCurrentView('back')}>Back</button>
-					<button onClick={() => setCurrentView('table')}>Table</button>
-				</div>
-				{renderView()}
-			</main>
+			<main>{renderView()}</main>
 		</ViewContext.Provider>
 	);
 }

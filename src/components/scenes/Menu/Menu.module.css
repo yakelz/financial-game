@@ -19,3 +19,11 @@
 	top: 35%;
 	left: 25%;
 }
+
+@media (max-width: 1024px) {
+	.title {
+		font-size: 80px;
+		padding: 20px 40px;
+		padding-left: 160px;
+	}
+}

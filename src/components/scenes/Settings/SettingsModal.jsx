@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './SettingsModal.module.css';
 
 import { useAudio } from '@utils/AudioContext';
@@ -11,20 +11,19 @@ const SettingsModal = ({ onClose }) => {
 		setEffectsVolume,
 		voiceVolume,
 		setVoiceVolume,
+		isMuted,
+		toggleMute,
 	} = useAudio();
-
-	// Сохранение в localStorage при изменении громкости
-	useEffect(() => {
-		localStorage.setItem('musicVolume', musicVolume.toString());
-		localStorage.setItem('effectsVolume', effectsVolume.toString());
-		localStorage.setItem('voiceVolume', voiceVolume.toString());
-	}, [musicVolume, effectsVolume, voiceVolume]);
 
 	return (
 		<div className={styles.modalBackground}>
 			<div className={styles.modal}>
 				<h2>Настройки</h2>
 
+				<div>
+					<label>Mute All Sounds:</label>
+					<input type='checkbox' checked={isMuted} onChange={toggleMute} />
+				</div>
 				<div>
 					<label>Music Volume:</label>
 					<input
@@ -34,6 +33,7 @@ const SettingsModal = ({ onClose }) => {
 						step='0.01'
 						value={musicVolume}
 						onChange={(e) => setMusicVolume(parseFloat(e.target.value))}
+						disabled={isMuted}
 					/>
 				</div>
 				<div>
@@ -45,6 +45,7 @@ const SettingsModal = ({ onClose }) => {
 						step='0.01'
 						value={effectsVolume}
 						onChange={(e) => setEffectsVolume(parseFloat(e.target.value))}
+						disabled={isMuted}
 					/>
 				</div>
 				<div>
@@ -56,6 +57,7 @@ const SettingsModal = ({ onClose }) => {
 						step='0.01'
 						value={voiceVolume}
 						onChange={(e) => setVoiceVolume(parseFloat(e.target.value))}
+						disabled={isMuted}
 					/>
 				</div>
 

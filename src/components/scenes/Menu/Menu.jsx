@@ -1,4 +1,6 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState } from 'react';
+import { useSpring, animated } from 'react-spring';
+
 import { useNavigate, Link } from 'react-router-dom';
 import IntroVideo from '../Intro/IntroVideo';
 
@@ -26,16 +28,35 @@ function Menu() {
 		navigate('/office');
 	};
 
+	// Анимация для заголовка
+	const titleAnimation = useSpring({
+		from: { transform: 'translateX(180%)' },
+		to: { transform: 'translateX(0)' },
+		delay: 800, // Задержка, чтобы заголовок начал анимироваться после персонажа
+	});
+
 	return (
 		<main>
 			{playVideo ? (
 				<IntroVideo onSkip={videoEnded} />
 			) : (
 				<>
-					<Character onMenu={true} />
+					{/* <Character onMenu={true} />
 					<h1 className={styles.title}>След в сети</h1>
 					<SettingsButton />
 					<PlayButton onClick={handlePlayGame} />
+					<Background src={bg} /> */}
+
+					<Character onMenu={true} />
+
+					<animated.h1 style={titleAnimation} className={styles.title}>
+						След в сети
+					</animated.h1>
+
+					<SettingsButton />
+
+					<PlayButton onClick={handlePlayGame} />
+
 					<Background src={bg} />
 				</>
 			)}

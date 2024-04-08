@@ -1,6 +1,6 @@
 import React from 'react';
 
-import map from '@assets/UI/map.svg';
+import map from '@assets/UI/Icons/map.svg';
 
 function Map() {
 	return (

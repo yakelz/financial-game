@@ -1,6 +1,6 @@
 import React from 'react';
 
-import clock from '@assets/UI/clock.svg';
+import clock from '@assets/UI/Icons/clock.svg';
 
 import styles from './Clock.module.css';
 

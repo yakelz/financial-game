@@ -1,6 +1,6 @@
 import React from 'react';
 
-import calendar from '@assets/UI/calendar.svg';
+import calendar from '@assets/UI/Icons/calendar.svg';
 
 function Calendar() {
 	return (
