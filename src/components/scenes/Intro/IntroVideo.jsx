@@ -1,17 +1,16 @@
 import React, { useEffect, useRef } from 'react';
 
 import { useAudio } from '@utils/AudioContext';
-import VolumeButton from '@ui/Buttons/VolumeButton/VolumeButton';
 
 function IntroVideo({ onSkip }) {
 	const videoRef = useRef(null);
 	const { musicVolume } = useAudio();
 
 	useEffect(() => {
-		// Попытка автоматически воспроизвести видео при загрузке компонента
+		// Autoplay при загрузке компонента
 		if (videoRef.current) {
 			videoRef.current.play().catch((error) => {
-				// Обработка ошибки, если автовоспроизведение не удалось
+				// Если autoplay не сработал
 				console.error('Ошибка воспроизведения видео: ', error);
 			});
 			videoRef.current.volume = musicVolume;
@@ -19,8 +18,7 @@ function IntroVideo({ onSkip }) {
 	}, [musicVolume]);
 
 	return (
-		<div style={{ position: 'fixed', top: 0, left: 0, width: '100%', height: '100%', zIndex: 100 }}>
-			<VolumeButton />
+		<div style={{ position: 'fixed', top: 0, left: 0, width: '100%', height: '100vh', zIndex: 10 }}>
 			<video ref={videoRef} width='100%' height='100%' autoPlay onEnded={onSkip}>
 				<source src='./Video/intro.mp4' type='video/mp4' />
 				Ваш браузер не поддерживает видеотег.

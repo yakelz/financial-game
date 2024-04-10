@@ -1,0 +1,59 @@
+.applications {
+	background-color: #8edce8;
+	height: 100vh;
+	width: 100%;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.container {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 60px;
+}
+
+.applications button {
+	padding: 50px;
+	transition: transform 0.2s;
+	border-radius: 10%;
+}
+
+.applications button svg {
+	width: 200px;
+	height: 200px;
+}
+
+.applications button:hover {
+	transform: scale(1.05);
+}
+
+.calendar {
+	background-color: #0fa7eb;
+	box-shadow: -25px 25px 0px #5e93b7;
+}
+
+.protocol {
+	background-color: #12a2a1;
+	box-shadow: -25px 25px 0px #346868;
+}
+
+.email {
+	background-color: #ffdb58;
+	box-shadow: -25px 25px 0px rgba(204, 153, 0, 0.8);
+}
+
+.files {
+	background-color: #90ee90;
+	box-shadow: -25px 25px 0px rgba(0, 100, 0, 0.8);
+}
+
+.browser {
+	background-color: #dda0dd;
+	box-shadow: -25px 25px 0px rgba(150, 0, 150, 0.8);
+}
+
+.music {
+	background-color: #ffa07a;
+	box-shadow: -25px 25px 0px rgba(255, 69, 0, 0.8);
+}

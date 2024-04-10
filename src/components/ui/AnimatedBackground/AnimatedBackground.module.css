@@ -1,0 +1,31 @@
+@keyframes moveBackground {
+	from {
+		transform: translateX(-50%);
+	}
+	to {
+		transform: translateX(0);
+	}
+}
+
+.movingBackground {
+	background-repeat: repeat-x;
+	background-position: center;
+	background-size: cover;
+	width: 200%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.clouds {
+	animation: moveBackground 30s linear infinite;
+}
+
+.buildings {
+	animation: moveBackground 60s linear infinite;
+}
+
+.grass {
+	animation: moveBackground 30s linear infinite;
+}

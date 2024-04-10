@@ -4,13 +4,13 @@ import styles from './Gamebar.module.css';
 import Character from '../Character/Character';
 import Clock from '../Clock/Clock';
 import Instruments from '../Instruments/Instruments';
-import SettingsButton from '../Buttons/SettingsButton/SettingsButton';
 import VolumeButton from '../Buttons/VolumeButton/VolumeButton';
+import Settings from '@scenes/Settings/Settings';
 
 function Gamebar() {
 	return (
 		<>
-			<SettingsButton />
+			<Settings />
 			<VolumeButton />
 			<Character />
 			<div className={styles.gamebar}>

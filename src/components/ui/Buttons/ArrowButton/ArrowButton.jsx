@@ -1,6 +1,8 @@
 import React, { useContext } from 'react';
 import { useAudio } from '@utils/AudioContext';
 
+import styles from './ArrowButton.module.css';
+
 function ArrowButton({ position, onClick, children }) {
 	const { playEffectSound } = useAudio();
 
@@ -10,7 +12,11 @@ function ArrowButton({ position, onClick, children }) {
 	};
 
 	return (
-		<button style={{ position: 'fixed', ...position }} onClick={handleClick}>
+		<button
+			className={styles.button}
+			style={{ position: 'fixed', ...position }}
+			onClick={handleClick}
+		>
 			{children}
 		</button>
 	);

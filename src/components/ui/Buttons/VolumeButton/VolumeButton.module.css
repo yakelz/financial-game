@@ -2,7 +2,7 @@
 	position: fixed;
 	top: 30px;
 	left: 200px;
-	z-index: 101;
+	z-index: 20;
 }
 
 .button svg {
