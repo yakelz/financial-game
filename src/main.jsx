@@ -7,12 +7,15 @@ import { Provider } from 'react-redux';
 import { store } from './store/store';
 
 import { AudioProvider } from '@utils/AudioContext';
+import { NotificationProvider } from '@utils/NotificationContext';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
 	<React.StrictMode>
 		<Provider store={store}>
 			<AudioProvider>
-				<App />
+				<NotificationProvider>
+					<App />
+				</NotificationProvider>
 			</AudioProvider>
 		</Provider>
 	</React.StrictMode>

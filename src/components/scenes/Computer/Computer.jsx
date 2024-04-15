@@ -30,7 +30,19 @@ function Computer() {
 				return <Home />;
 		}
 	};
-	return <ViewContext.Provider value={{ setCurrentView }}>{renderView()}</ViewContext.Provider>;
+	return (
+		<ViewContext.Provider value={{ setCurrentView }}>
+			{currentView !== 'home' && (
+				<button
+					onClick={() => setCurrentView('home')}
+					style={{ position: 'absolute', top: '10px', right: '10px' }}
+				>
+					Close
+				</button>
+			)}
+			{renderView()}
+		</ViewContext.Provider>
+	);
 }
 
 export default Computer;

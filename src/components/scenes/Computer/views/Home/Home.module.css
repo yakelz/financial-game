@@ -28,6 +28,12 @@
 	transform: scale(1.05);
 }
 
+.exit {
+	position: fixed;
+	top: 50px;
+	right: 50px;
+}
+
 .calendar {
 	background-color: #0fa7eb;
 	box-shadow: -25px 25px 0px #5e93b7;
@@ -56,4 +62,52 @@
 .music {
 	background-color: #ffa07a;
 	box-shadow: -25px 25px 0px rgba(255, 69, 0, 0.8);
+}
+
+@media (max-width: 1024px) {
+	.container {
+		gap: 20px;
+		grid-template-columns: repeat(6, 1fr);
+	}
+	.applications button {
+		padding: 20px;
+	}
+	.applications button svg {
+		width: 50px;
+		height: 50px;
+	}
+
+	.exit {
+		top: 20px;
+		right: 20px;
+	}
+
+	.exit svg {
+		width: 70px;
+		height: 70px;
+	}
+
+	.calendar {
+		box-shadow: -10px 10px 0px #5e93b7;
+	}
+
+	.protocol {
+		box-shadow: -10px 10px 0px #346868;
+	}
+
+	.email {
+		box-shadow: -10px 10px 0px rgba(204, 153, 0, 0.8);
+	}
+
+	.files {
+		box-shadow: -10px 10px 0px rgba(0, 100, 0, 0.8);
+	}
+
+	.browser {
+		box-shadow: -10px 10px 0px rgba(150, 0, 150, 0.8);
+	}
+
+	.music {
+		box-shadow: -10px 10px 0px rgba(255, 69, 0, 0.8);
+	}
 }
