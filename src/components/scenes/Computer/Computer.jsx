@@ -8,6 +8,8 @@ import Files from './views/Files/Files';
 import Browser from './views/Browser/Browser';
 import Calendar from '../Calendar/Calendar';
 
+import Close from '@assets/UI/Icons/close.svg?react';
+
 function Computer() {
 	const [currentView, setCurrentView] = useState('home');
 	const renderView = () => {
@@ -35,9 +37,9 @@ function Computer() {
 			{currentView !== 'home' && (
 				<button
 					onClick={() => setCurrentView('home')}
-					style={{ position: 'absolute', top: '10px', right: '10px' }}
+					style={{ position: 'fixed', top: '30px', right: '30px', zIndex: '1' }}
 				>
-					Close
+					<Close />
 				</button>
 			)}
 			{renderView()}

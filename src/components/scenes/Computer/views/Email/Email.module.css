@@ -1,0 +1,151 @@
+.container {
+	width: 100%;
+	height: 100vh;
+	background-color: #433360;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.inbox {
+	background-color: #615298;
+	border-radius: 0 30px 30px 0;
+	box-shadow: 20px 20px 0px rgba(0, 0, 0, 0.25);
+	padding: 30px;
+
+	font-size: 40px;
+	font-family: 'Mplus';
+
+	position: fixed;
+	top: 20%;
+	left: 0;
+}
+
+.header {
+	background-color: #8edce8;
+	box-shadow: 0px 20px 0px rgba(0, 0, 0, 0.25);
+
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+
+	display: flex;
+	align-items: center;
+	gap: 30px;
+	padding: 0 20px;
+}
+
+.header h2 {
+	font-size: 40px;
+	text-shadow: 5px 5px 0 rgba(0, 0, 0, 0.25);
+	font-family: 'Mplus';
+}
+
+.header svg {
+	width: 120px;
+	height: 120px;
+}
+
+.container main {
+	width: 60%;
+	height: 60vh;
+	background-color: white;
+	box-shadow: 20px 20px 0px rgba(0, 0, 0, 0.25);
+	border-radius: 20px;
+	overflow-y: scroll;
+
+	padding: 20px 0;
+}
+
+.message {
+	font-size: 30px;
+	padding: 30px;
+	cursor: pointer;
+
+	display: flex;
+	align-items: center;
+	gap: 20px;
+	border-bottom: 2px solid #999999;
+	color: black;
+}
+
+.from,
+.theme {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	flex-shrink: 0;
+}
+
+.from {
+	width: 15%;
+}
+
+.theme {
+	width: 20%;
+}
+
+.text {
+	font-style: italic;
+	color: #6d6d6d;
+
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: block;
+	flex-grow: 1;
+	max-width: 100%;
+}
+
+.text::before {
+	content: '– ';
+	color: black;
+}
+
+/* Стили для непрочитанного сообщения */
+.unread {
+	background-color: #f5f5ff;
+}
+
+.unread .from,
+.unread .theme {
+	font-weight: bold;
+}
+
+/* зелёный кружочек */
+.unread .theme::before {
+	content: '';
+	display: inline-block;
+	width: 15px;
+	height: 15px;
+	background-color: green;
+	border-radius: 50%;
+	margin-right: 5px;
+	vertical-align: middle;
+}
+
+/* Стили для скрола */
+
+/* Стили для Firefox */
+.container main {
+	scrollbar-color: #8edce8 transparent;
+	scrollbar-width: auto;
+}
+
+.container main::-webkit-scrollbar {
+	width: 30px;
+}
+
+.container main::-webkit-scrollbar-track {
+	background: transparent;
+	border-radius: 10px;
+}
+
+.container main::-webkit-scrollbar-thumb {
+	background-color: #8edce8;
+	border-radius: 10px;
+	border: 0px solid transparent;
+	background-clip: padding-box;
+}

@@ -1,3 +1,11 @@
+@font-face {
+	font-family: 'Mplus';
+	src: url('./Fonts/MPLUS1p-ExtraBold.woff2') format('woff2'),
+		url('./Fonts/MPLUS1p-ExtraBold.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
 .applications {
 	background-color: #8edce8;
 	height: 100vh;
@@ -14,14 +22,25 @@
 }
 
 .applications button {
-	padding: 50px;
+	padding: 40px;
 	transition: transform 0.2s;
 	border-radius: 10%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.applications button span {
+	font-size: 40px;
+	color: white;
+	text-shadow: 5px 5px 0 rgba(0, 0, 0, 0.25);
+	font-family: 'Mplus';
 }
 
 .applications button svg {
-	width: 200px;
-	height: 200px;
+	width: 180px;
+	height: 180px;
 }
 
 .applications button:hover {
@@ -36,7 +55,7 @@
 
 .calendar {
 	background-color: #0fa7eb;
-	box-shadow: -25px 25px 0px #5e93b7;
+	box-shadow: -25px 25px 0px #346880;
 }
 
 .protocol {
@@ -45,36 +64,40 @@
 }
 
 .email {
-	background-color: #ffdb58;
-	box-shadow: -25px 25px 0px rgba(204, 153, 0, 0.8);
+	background-color: #433360;
+	box-shadow: -25px 25px 0px #251f31;
 }
 
 .files {
-	background-color: #90ee90;
-	box-shadow: -25px 25px 0px rgba(0, 100, 0, 0.8);
+	background-color: #f37c48;
+	box-shadow: -25px 25px 0px #bd4a46;
 }
 
 .browser {
-	background-color: #dda0dd;
-	box-shadow: -25px 25px 0px rgba(150, 0, 150, 0.8);
+	background-color: #615298;
+	box-shadow: -25px 25px 0px #433360;
 }
 
 .music {
-	background-color: #ffa07a;
-	box-shadow: -25px 25px 0px rgba(255, 69, 0, 0.8);
+	background-color: #f2c38f;
+	box-shadow: -25px 25px 0px #ab7447;
 }
 
 @media (max-width: 1024px) {
 	.container {
 		gap: 20px;
-		grid-template-columns: repeat(6, 1fr);
 	}
 	.applications button {
 		padding: 20px;
 	}
 	.applications button svg {
-		width: 50px;
-		height: 50px;
+		width: 60px;
+		height: 60px;
+	}
+
+	.applications button span {
+		font-size: 16px;
+		text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.25);
 	}
 
 	.exit {
@@ -88,7 +111,7 @@
 	}
 
 	.calendar {
-		box-shadow: -10px 10px 0px #5e93b7;
+		box-shadow: -10px 10px 0px #346880;
 	}
 
 	.protocol {
@@ -96,18 +119,18 @@
 	}
 
 	.email {
-		box-shadow: -10px 10px 0px rgba(204, 153, 0, 0.8);
+		box-shadow: -10px 10px 0px #251f31;
 	}
 
 	.files {
-		box-shadow: -10px 10px 0px rgba(0, 100, 0, 0.8);
+		box-shadow: -10px 10px 0px #bd4a46;
 	}
 
 	.browser {
-		box-shadow: -10px 10px 0px rgba(150, 0, 150, 0.8);
+		box-shadow: -10px 10px 0px #433360;
 	}
 
 	.music {
-		box-shadow: -10px 10px 0px rgba(255, 69, 0, 0.8);
+		box-shadow: -10px 10px 0px #ab7447;
 	}
 }

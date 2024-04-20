@@ -1,0 +1,14 @@
+@font-face {
+	font-family: 'Mplus';
+	src: url('./Fonts/MPLUS1p-ExtraBold.woff2') format('woff2'),
+		url('./Fonts/MPLUS1p-ExtraBold.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Hacked';
+	src: url('./Fonts/hacked.woff2') format('woff2'), url('./Fonts/hacked.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}

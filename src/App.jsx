@@ -1,4 +1,4 @@
-import './App.css';
+import './Fonts.css';
 import AppRouter from './utils/Router';
 import FullScreenPrompt from '@utils/FullScreenPromt';
 import { useAudioUnlocker } from '@utils/AudioUnlocker';
