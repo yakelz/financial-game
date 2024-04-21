@@ -1,11 +1,3 @@
-@font-face {
-	font-family: 'Mplus';
-	src: url('./Fonts/MPLUS1p-ExtraBold.woff2') format('woff2'),
-		url('./Fonts/MPLUS1p-ExtraBold.woff') format('woff');
-	font-weight: normal;
-	font-style: normal;
-}
-
 .applications {
 	background-color: #8edce8;
 	height: 100vh;

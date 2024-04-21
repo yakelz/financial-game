@@ -7,8 +7,8 @@ import Music from './views/Music/Music';
 import Files from './views/Files/Files';
 import Browser from './views/Browser/Browser';
 import Calendar from '../Calendar/Calendar';
-
-import Close from '@assets/UI/Icons/close.svg?react';
+import CloseButton from '@ui/Buttons/CloseButton/CloseButton';
+import styles from './Computer.module.css';
 
 function Computer() {
 	const [currentView, setCurrentView] = useState('home');
@@ -32,15 +32,11 @@ function Computer() {
 				return <Home />;
 		}
 	};
+
 	return (
 		<ViewContext.Provider value={{ setCurrentView }}>
 			{currentView !== 'home' && (
-				<button
-					onClick={() => setCurrentView('home')}
-					style={{ position: 'fixed', top: '30px', right: '30px', zIndex: '1' }}
-				>
-					<Close />
-				</button>
+				<CloseButton onClick={() => setCurrentView('home')} className={styles.close} />
 			)}
 			{renderView()}
 		</ViewContext.Provider>

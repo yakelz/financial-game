@@ -1,0 +1,121 @@
+.modalBackground {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0, 0, 0, 0.5);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 100;
+}
+.modal {
+	position: relative;
+}
+
+.messageContainer {
+	position: relative;
+}
+
+.text {
+	position: absolute;
+	color: black;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 30px;
+}
+
+.close {
+	z-index: 101;
+	position: fixed;
+	top: 15%;
+	right: 25%;
+}
+
+.text {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 102;
+	min-width: 30vw;
+	min-height: 60vh;
+
+	color: black;
+	background-color: white;
+	padding: 40px;
+	border: 15px solid black;
+	border-radius: 20px;
+	box-shadow: 20px 20px 0px rgba(0, 0, 0, 0.25);
+
+	text-overflow: ellipsis;
+	overflow: auto;
+
+	cursor: pointer;
+	transition: transform 0.3s ease, z-index 0s ease 1s;
+}
+
+.text::-webkit-scrollbar {
+	width: 10px;
+}
+
+.text::-webkit-scrollbar-track {
+	background: transparent;
+	border-radius: 5px;
+}
+.text::-webkit-scrollbar-thumb {
+	background-color: #8edce8;
+	border-radius: 5px;
+	border: 0px solid transparent;
+	background-clip: padding-box;
+}
+
+.raised {
+	transform: translate(-50%, -50%) translateY(-300px);
+	z-index: 102;
+	transition: transform 0.3s ease, z-index 0s ease 0.3s;
+}
+
+.above {
+	transform: translate(-50%, -50%) translateY(0);
+	z-index: 104;
+	transition: transform 0.3s ease, z-index 0s;
+}
+
+.messageFront {
+	pointer-events: none;
+	z-index: 103;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+
+.messageBack {
+	z-index: 101;
+}
+
+@media (max-width: 1024px) {
+	.messageContainer svg {
+		width: 350px;
+		height: 350px;
+	}
+
+	.text {
+		font-size: 16px;
+		border: 6px solid black;
+		box-shadow: 10px 10px 0px rgba(0, 0, 0, 0.25);
+		padding: 20px;
+
+		max-width: 40vw;
+		max-height: 50vh;
+	}
+
+	.close svg {
+		width: 40px;
+		height: 40px;
+	}
+}
