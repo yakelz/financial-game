@@ -9,16 +9,35 @@ function Protocol() {
 				<ProtocolIco />
 				<h2>Proтокол</h2>
 			</header>
+			<div className={styles.tab}>Мои дела</div>
 			<main>
-				<div
-					className={styles.message}
-					onClick={() => openModal('Здравствуй, Алексей. В системе появилось новое сообщение...')}
-				>
-					<span className={styles.from}>Федоров С.С</span>
-					<span className={styles.theme}>Новое дело</span>
-					<span className={styles.text}>
-						Здравствуй, Алексей. В системе появилось новое сообщение
-					</span>
+				<div className={styles.case} onClick={() => {}}>
+					<span className={styles.number}>№1150</span>
+					<span className={styles.title}>Телефонное мошенничество</span>
+				</div>
+				<div className={styles.case} onClick={() => {}}>
+					<span className={styles.number}>№1150</span>
+					<span className={styles.title}>Телефонное мошенничество</span>
+				</div>
+				<div className={styles.case} onClick={() => {}}>
+					<span className={styles.number}>№1150</span>
+					<span className={styles.title}>Телефонное мошенничество</span>
+				</div>
+				<div className={styles.case} onClick={() => {}}>
+					<span className={styles.number}>№1150</span>
+					<span className={styles.title}>Телефонное мошенничество</span>
+				</div>
+				<div className={styles.case} onClick={() => {}}>
+					<span className={styles.number}>№1150</span>
+					<span className={styles.title}>Телефонное мошенничество</span>
+				</div>
+				<div className={styles.case} onClick={() => {}}>
+					<span className={styles.number}>№1150</span>
+					<span className={styles.title}>Телефонное мошенничество</span>
+				</div>
+				<div className={styles.case} onClick={() => {}}>
+					<span className={styles.number}>№1150</span>
+					<span className={styles.title}>Телефонное мошенничество</span>
 				</div>
 			</main>
 		</div>

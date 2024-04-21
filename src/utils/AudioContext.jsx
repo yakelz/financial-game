@@ -51,7 +51,26 @@ export const AudioProvider = ({ children }) => {
 		}
 	}, [voiceSrc]);
 
+	useEffect(() => {
+		const musicPlayer = musicRef.current;
+
+		const handleMusicEnd = () => {
+			setMusicSrc(null);
+		};
+
+		if (musicPlayer) {
+			musicPlayer.addEventListener('ended', handleMusicEnd);
+		}
+
+		return () => {
+			if (musicPlayer) {
+				musicPlayer.removeEventListener('ended', handleMusicEnd);
+			}
+		};
+	}, []);
+
 	const playEffectSound = (soundPath) => {
+		console.log(effectsVolume);
 		const audio = new Audio(soundPath);
 		audio.volume = effectsVolume;
 		audio.play().catch((error) => console.error('Error playing effect sound:', error));
@@ -134,6 +153,7 @@ export const AudioProvider = ({ children }) => {
 
 				isMuted,
 				toggleMute,
+				currentTrack: musicSrc,
 			}}
 		>
 			{children}

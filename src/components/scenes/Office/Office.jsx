@@ -24,7 +24,6 @@ function Office() {
 
 	useEffect(() => {
 		setMusicSource('./Audio/Music/losyash.mp3');
-		return () => setMusicSource('');
 	}, [setMusicSource]);
 
 	const renderView = () => {

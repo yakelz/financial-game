@@ -1,7 +1,7 @@
 .container {
 	width: 100%;
 	height: 100vh;
-	background-color: #12a2a1;
+	background-color: #f2c38f;
 
 	display: flex;
 	align-items: center;
@@ -35,20 +35,6 @@
 	padding: 10px;
 }
 
-.tab {
-	background-color: #433360;
-	border-radius: 0 30px 30px 0;
-	box-shadow: 20px 20px 0px rgba(0, 0, 0, 0.25);
-	padding: 30px;
-
-	font-size: 40px;
-	font-family: 'Mplus';
-
-	position: fixed;
-	top: 20%;
-	left: 0;
-}
-
 .container main {
 	width: 60%;
 	height: 60vh;
@@ -60,7 +46,7 @@
 	padding: 20px 0;
 }
 
-.case {
+.track {
 	font-size: 30px;
 	padding: 30px;
 	cursor: pointer;
@@ -68,15 +54,14 @@
 	display: flex;
 	align-items: center;
 	gap: 20px;
-	border-bottom: 2px solid #999999;
 	color: black;
 }
 
-.case:hover {
+.track:hover {
 	background-color: #ebf5f5;
 }
 
-.number {
+.title {
 	font-weight: 700;
 }
 

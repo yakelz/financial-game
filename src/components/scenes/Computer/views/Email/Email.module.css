@@ -114,7 +114,7 @@
 	font-weight: bold;
 }
 
-/* зелёный кружочек */
+/* Зелёный кружочек */
 .unread .theme::before {
 	content: '';
 	display: inline-block;
