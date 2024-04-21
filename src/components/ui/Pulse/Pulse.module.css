@@ -5,6 +5,7 @@
 	z-index: 3;
 	width: 200px;
 	height: 200px;
+	pointer-events: none;
 }
 
 .pulsating::after,
@@ -36,5 +37,12 @@
 	100% {
 		transform: scale(1.2);
 		opacity: 0;
+	}
+}
+
+@media (max-width: 1024px) {
+	.pulse {
+		width: 60px;
+		height: 60px;
 	}
 }

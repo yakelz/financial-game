@@ -18,7 +18,7 @@ function Home() {
 	const navigate = useNavigate();
 	return (
 		<>
-			<Pulse top={50} left={50} />
+			<Pulse top={20} left={64} />
 			<button
 				className={styles.exit}
 				onClick={() => navigate('/office', { state: { view: 'table' } })}

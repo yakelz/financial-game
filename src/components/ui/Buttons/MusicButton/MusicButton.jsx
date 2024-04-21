@@ -4,6 +4,8 @@ import { useAudio } from '@utils/AudioContext'; // Убедитесь, что п
 import MusicPlay from '@assets/UI/Buttons/music_play.svg?react';
 import MusicPause from '@assets/UI/Buttons/music_pause.svg?react';
 
+import styles from './MusicButton.module.css';
+
 function MusicButton({ musicSrc }) {
 	const { playMusic, pauseMusic, setMusicSource, isMuted, currentTrack } = useAudio();
 	const isPlaying = currentTrack === musicSrc;
@@ -30,7 +32,7 @@ function MusicButton({ musicSrc }) {
 	// }, [isMuted, isPlaying, pauseMusic]);
 
 	return (
-		<button onClick={togglePlay}>
+		<button className={styles.button} onClick={togglePlay}>
 			{isMuted ? <MusicPlay /> : isPlaying ? <MusicPause /> : <MusicPlay />}
 		</button>
 	);

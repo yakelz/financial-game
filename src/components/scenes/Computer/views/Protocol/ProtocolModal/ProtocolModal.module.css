@@ -1,0 +1,78 @@
+.modalBackground {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0, 0, 0, 0.5);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 100;
+}
+.modal {
+	position: relative;
+}
+
+.caseContainer {
+	position: relative;
+	background-color: #ffebd7;
+	box-shadow: 20px 20px 0px rgba(0, 0, 0, 0.25);
+	width: 30vw;
+	height: 80vh;
+
+	color: black;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.number,
+.title {
+	text-align: center;
+}
+
+.number {
+	font-size: 48px;
+	font-weight: 700;
+	margin-bottom: 30px;
+	text-transform: uppercase;
+}
+
+.title {
+	font-size: 30px;
+}
+.year {
+	position: absolute;
+	bottom: 60px;
+	font-size: 18px;
+	font-weight: 700;
+}
+
+.close {
+	z-index: 101;
+	position: fixed;
+	top: 15%;
+	right: 30%;
+}
+
+@media (max-width: 1024px) {
+	.number {
+		font-size: 26px;
+	}
+
+	.title {
+		font-size: 16px;
+	}
+	.year {
+		font-size: 12px;
+		bottom: 30px;
+	}
+
+	.close svg {
+		width: 40px;
+		height: 40px;
+	}
+}
