@@ -56,6 +56,10 @@
 	border-radius: 20px;
 	overflow-y: scroll;
 
+	display: flex;
+	flex-direction: column-reverse;
+	justify-content: flex-end;
+
 	padding: 20px 0;
 }
 

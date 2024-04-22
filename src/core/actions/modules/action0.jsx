@@ -6,13 +6,18 @@ import { useAudio } from '@utils/AudioContext';
 
 const OfficeComponent = () => {
 	const showNotification = useNotification();
-	const { nextAction } = useGameStore();
+	const { nextAction, addEmail } = useGameStore();
 	const { setMusicSource, setEffectSource, setVoiceSource } = useAudio();
 
 	useEffect(() => {
 		const timer = setTimeout(() => {
 			showNotification('Это офис. Здесь твоё рабочее место. Проверь электронную почту.');
 		}, 5000);
+		addEmail({
+			from: 'Федоров С.С',
+			theme: 'Новое дело',
+			text: 'Здравствуй, Алексей. В системе появилось новое сообщение...',
+		});
 		return () => clearTimeout(timer);
 	}, []);
 
