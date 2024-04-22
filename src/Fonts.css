@@ -12,3 +12,11 @@
 	font-weight: normal;
 	font-style: normal;
 }
+
+@font-face {
+	font-family: 'DigitalNumbers';
+	src: url('./Fonts/DigitalNumbers-Regular.woff2') format('woff2'),
+		url('./Fonts/DigitalNumbers-Regular.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}

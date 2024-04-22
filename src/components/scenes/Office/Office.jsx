@@ -8,23 +8,15 @@ import DoorView from './views/Door/Door';
 
 import ViewContext from '@utils/ViewContext';
 import { useAudio } from '@utils/AudioContext';
-import { useNotification } from '@utils/useNotification';
+
+import getAction from '@core/actions/getAction';
 
 function Office() {
 	const location = useLocation();
 	const initialView = location.state?.view || 'front';
 	const [currentView, setCurrentView] = useState(initialView);
 
-	const { setMusicSource, setEffectSource, setVoiceSource } = useAudio();
-	const showNotification = useNotification();
-
-	useEffect(() => {
-		showNotification('Это офис. Здесь твоё рабочее место. Проверь электронную почту.');
-	}, []);
-
-	useEffect(() => {
-		setMusicSource('./Audio/Music/losyash.mp3');
-	}, [setMusicSource]);
+	const { component: ActionComponent } = getAction('Office');
 
 	const renderView = () => {
 		switch (currentView) {
@@ -43,7 +35,10 @@ function Office() {
 
 	return (
 		<ViewContext.Provider value={{ setCurrentView }}>
-			<main>{renderView()}</main>
+			<main>
+				<ActionComponent />
+				{renderView()}
+			</main>
 		</ViewContext.Provider>
 	);
 }

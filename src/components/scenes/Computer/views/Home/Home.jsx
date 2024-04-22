@@ -13,12 +13,16 @@ import Exit from '@assets/Computer/exit.svg?react';
 
 import Pulse from '@ui/Pulse/Pulse';
 
+import getAction from '@core/actions/getAction';
+
 function Home() {
 	const { setCurrentView } = useContext(ViewContext);
 	const navigate = useNavigate();
+	const { component: ActionComponent } = getAction('Home');
+
 	return (
 		<>
-			<Pulse top={20} left={64} />
+			<ActionComponent />
 			<button
 				className={styles.exit}
 				onClick={() => navigate('/office', { state: { view: 'table' } })}
