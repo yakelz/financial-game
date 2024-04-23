@@ -3,10 +3,15 @@ import styles from './Protocol.module.css';
 import ProtocolIco from '@assets/Computer/protocol.svg?react';
 import ProtocolModal from './ProtocolModal/ProtocolModal';
 
+import useGameStore from '@core/store/useGameStore';
+
 function Protocol() {
 	const [isModalOpen, setModalOpen] = useState(false);
+	const { caseItems, setCaseRead } = useGameStore();
 
-	const openModal = () => {
+	const openModal = (index) => {
+		setCaseRead(index);
+		console.log(caseItems);
 		setModalOpen(true);
 	};
 
@@ -22,14 +27,18 @@ function Protocol() {
 			</header>
 			<div className={styles.tab}>Мои дела</div>
 			<main>
-				<div className={styles.case} onClick={openModal}>
-					<span className={styles.number}>№1150</span>
-					<span className={styles.title}>Телефонное мошенничество</span>
-				</div>
-				<div className={styles.case} onClick={openModal}>
-					<span className={styles.number}>№1150</span>
-					<span className={styles.title}>Телефонное мошенничество</span>
-				</div>
+				{caseItems.map((caseItem, index) => (
+					<div
+						key={index}
+						className={styles.case}
+						onClick={() => {
+							openModal(index);
+						}}
+					>
+						<span className={styles.number}>{caseItem.number}</span>
+						<span className={styles.title}>{caseItem.title}</span>
+					</div>
+				))}
 			</main>
 			{isModalOpen && <ProtocolModal onClose={closeModal} />}
 		</div>

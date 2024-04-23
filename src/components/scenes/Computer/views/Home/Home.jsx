@@ -1,5 +1,8 @@
-import useViewStore from '@core/store/useViewStore';
+import React, { useEffect, useRef } from 'react';
 import styles from './Home.module.css';
+
+import getAction from '@core/actions/getAction';
+import useViewStore from '@core/store/useViewStore';
 
 import Calendar from '@assets/UI/Icons/calendar.svg?react';
 import Protocol from '@assets/Computer/protocol.svg?react';
@@ -9,16 +12,30 @@ import Browser from '@assets/Computer/browser.svg?react';
 import Music from '@assets/Computer/music.svg?react';
 import Exit from '@assets/Computer/exit.svg?react';
 
-import getAction from '@core/actions/getAction';
+import Pulse from '@ui/Pulse/Pulse';
 
 function Home() {
-	const { setComputerSubView, setOfficeSubView, setView } = useViewStore();
+	const { setComputerSubView, setOfficeSubView, setView, pulseRef } = useViewStore();
 
 	const { component: ActionComponent } = getAction('Home');
 
+	const emailRef = useRef(null);
+	const protocolRef = useRef(null);
+
+	const getCurrentRef = () => {
+		switch (pulseRef) {
+			case 'email':
+				return emailRef;
+			case 'protocol':
+				return protocolRef;
+			default:
+				return null;
+		}
+	};
+
 	return (
 		<>
-			<ActionComponent />
+			{pulseRef && <Pulse targetRef={getCurrentRef()} />}
 			<button
 				className={styles.exit}
 				onClick={() => {
@@ -37,11 +54,19 @@ function Home() {
 						<Calendar />
 						<span>Календарь</span>
 					</button>
-					<button className={styles.protocol} onClick={() => setComputerSubView('protocol')}>
+					<button
+						ref={protocolRef}
+						className={styles.protocol}
+						onClick={() => setComputerSubView('protocol')}
+					>
 						<Protocol />
 						<span>Proтокол</span>
 					</button>
-					<button className={styles.email} onClick={() => setComputerSubView('email')}>
+					<button
+						ref={emailRef}
+						className={styles.email}
+						onClick={() => setComputerSubView('email')}
+					>
 						<Mail />
 						<span>Email</span>
 					</button>
