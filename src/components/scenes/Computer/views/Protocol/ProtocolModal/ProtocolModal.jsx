@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import styles from './ProtocolModal.module.css';
 
 import { useSpring, animated } from 'react-spring';
-import { useAudio } from '@utils/AudioContext';
+import { useAudio } from '@core/audio/AudioContext';
 import CloseButton from '@ui/Buttons/CloseButton/CloseButton';
 import ArrowButton from '@ui/Buttons/ArrowButton/ArrowButton';
 

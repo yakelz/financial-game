@@ -1,25 +1,19 @@
-import React, { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
-
 import FrontView from './views/Front/Front';
 import BackView from './views/Back/Back';
 import TableView from './views/Table/Table';
 import DoorView from './views/Door/Door';
+import Computer from '../Computer/Computer';
 
-import ViewContext from '@utils/ViewContext';
-import { useAudio } from '@utils/AudioContext';
-
+import useViewStore from '@core/store/useViewStore';
 import getAction from '@core/actions/getAction';
 
 function Office() {
-	const location = useLocation();
-	const initialView = location.state?.view || 'front';
-	const [currentView, setCurrentView] = useState(initialView);
+	const { officeSubView, setView } = useViewStore();
 
 	const { component: ActionComponent } = getAction('Office');
 
 	const renderView = () => {
-		switch (currentView) {
+		switch (officeSubView) {
 			case 'front':
 				return <FrontView />;
 			case 'back':
@@ -28,18 +22,18 @@ function Office() {
 				return <TableView />;
 			case 'door':
 				return <DoorView />;
+			case 'computer':
+				return <Computer />;
 			default:
 				return <FrontView />;
 		}
 	};
 
 	return (
-		<ViewContext.Provider value={{ setCurrentView }}>
-			<main>
-				<ActionComponent />
-				{renderView()}
-			</main>
-		</ViewContext.Provider>
+		<main>
+			<ActionComponent />
+			{renderView()}
+		</main>
 	);
 }
 

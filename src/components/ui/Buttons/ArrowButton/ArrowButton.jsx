@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { useAudio } from '@utils/AudioContext';
+import { useAudio } from '@core/audio/AudioContext';
 
 import styles from './ArrowButton.module.css';
 

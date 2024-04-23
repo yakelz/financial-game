@@ -9,7 +9,6 @@ export default defineConfig({
 			'@scenes': path.resolve(__dirname, 'src/components/scenes'),
 			'@assets': path.resolve(__dirname, 'src/components/assets'),
 			'@ui': path.resolve(__dirname, 'src/components/ui'),
-			'@utils': path.resolve(__dirname, 'src/utils'),
 			'@core': path.resolve(__dirname, 'src/core/'),
 		},
 	},

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styles from './MessageModal.module.css';
 import { useSpring, animated } from 'react-spring';
-import { useAudio } from '@utils/AudioContext';
+import { useAudio } from '@core/audio/AudioContext';
 import CloseButton from '@ui/Buttons/CloseButton/CloseButton';
 import MessageFront from '@assets/Computer/message_front.svg?react';
 import MessageBack from '@assets/Computer/message_back.svg?react';

@@ -4,7 +4,7 @@ import VolumeOn from '@assets/UI/Buttons/volume_on.svg?react';
 import VolumeOff from '@assets/UI/Buttons/volume_off.svg?react';
 import styles from './VolumeButton.module.css';
 
-import { useAudio } from '@utils/AudioContext';
+import { useAudio } from '@core/audio/AudioContext';
 
 function VolumeButton() {
 	const { isMuted, toggleMute } = useAudio();

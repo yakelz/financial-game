@@ -1,6 +1,4 @@
-import React, { useContext } from 'react';
-import { useNavigate } from 'react-router-dom';
-import ViewContext from '@utils/ViewContext';
+import useViewStore from '@core/store/useViewStore';
 import styles from './Home.module.css';
 
 import Calendar from '@assets/UI/Icons/calendar.svg?react';
@@ -11,13 +9,11 @@ import Browser from '@assets/Computer/browser.svg?react';
 import Music from '@assets/Computer/music.svg?react';
 import Exit from '@assets/Computer/exit.svg?react';
 
-import Pulse from '@ui/Pulse/Pulse';
-
 import getAction from '@core/actions/getAction';
 
 function Home() {
-	const { setCurrentView } = useContext(ViewContext);
-	const navigate = useNavigate();
+	const { setComputerSubView, setOfficeSubView, setView } = useViewStore();
+
 	const { component: ActionComponent } = getAction('Home');
 
 	return (
@@ -25,7 +21,10 @@ function Home() {
 			<ActionComponent />
 			<button
 				className={styles.exit}
-				onClick={() => navigate('/office', { state: { view: 'table' } })}
+				onClick={() => {
+					setView('office');
+					setOfficeSubView('table');
+				}}
 			>
 				<Exit />
 			</button>
@@ -33,28 +32,28 @@ function Home() {
 				<div className={styles.container}>
 					<button
 						className={`${styles.calendar} ${styles.pulse}`}
-						onClick={() => setCurrentView('calendar')}
+						onClick={() => setComputerSubView('calendar')}
 					>
 						<Calendar />
 						<span>Календарь</span>
 					</button>
-					<button className={styles.protocol} onClick={() => setCurrentView('protocol')}>
+					<button className={styles.protocol} onClick={() => setComputerSubView('protocol')}>
 						<Protocol />
 						<span>Proтокол</span>
 					</button>
-					<button className={styles.email} onClick={() => setCurrentView('email')}>
+					<button className={styles.email} onClick={() => setComputerSubView('email')}>
 						<Mail />
 						<span>Email</span>
 					</button>
-					<button className={styles.files} onClick={() => setCurrentView('files')}>
+					<button className={styles.files} onClick={() => setComputerSubView('files')}>
 						<Files />
 						<span>Файлы</span>
 					</button>
-					<button className={styles.browser} onClick={() => setCurrentView('browser')}>
+					<button className={styles.browser} onClick={() => setComputerSubView('browser')}>
 						<Browser />
 						<span>Браузер</span>
 					</button>
-					<button className={styles.music} onClick={() => setCurrentView('music')}>
+					<button className={styles.music} onClick={() => setComputerSubView('music')}>
 						<Music />
 						<span>Музыка</span>
 					</button>

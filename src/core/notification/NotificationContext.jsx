@@ -1,6 +1,6 @@
 import React, { createContext, useState, useCallback, useEffect } from 'react';
 import Notification from '@ui/Notification/Notification';
-import { useAudio } from '@utils/AudioContext';
+import { useAudio } from '@core/audio/AudioContext';
 
 export const NotificationContext = createContext();
 

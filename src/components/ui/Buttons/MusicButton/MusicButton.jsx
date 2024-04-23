@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useAudio } from '@utils/AudioContext'; // Убедитесь, что путь указан верно
+import { useAudio } from '@core/audio/AudioContext';
 
 import MusicPlay from '@assets/UI/Buttons/music_play.svg?react';
 import MusicPause from '@assets/UI/Buttons/music_pause.svg?react';

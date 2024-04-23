@@ -1,19 +1,21 @@
-import React, { useState } from 'react';
+import useViewStore from '@core/store/useViewStore';
+
 import Protocol from './views/Protocol/Protocol';
 import Home from './views/Home/Home';
 import Email from './views/Email/Email';
-import ViewContext from '@utils/ViewContext';
 import Music from './views/Music/Music';
 import Files from './views/Files/Files';
 import Browser from './views/Browser/Browser';
 import Calendar from '../Calendar/Calendar';
+
 import CloseButton from '@ui/Buttons/CloseButton/CloseButton';
 import styles from './Computer.module.css';
 
 function Computer() {
-	const [currentView, setCurrentView] = useState('home');
+	const { computerSubView, setComputerSubView } = useViewStore();
+
 	const renderView = () => {
-		switch (currentView) {
+		switch (computerSubView) {
 			case 'home':
 				return <Home />;
 			case 'calendar':
@@ -34,12 +36,12 @@ function Computer() {
 	};
 
 	return (
-		<ViewContext.Provider value={{ setCurrentView }}>
-			{currentView !== 'home' && (
-				<CloseButton onClick={() => setCurrentView('home')} className={styles.close} />
+		<>
+			{computerSubView !== 'home' && (
+				<CloseButton onClick={() => setComputerSubView('home')} className={styles.close} />
 			)}
 			{renderView()}
-		</ViewContext.Provider>
+		</>
 	);
 }
 

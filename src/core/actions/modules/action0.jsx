@@ -1,23 +1,25 @@
 import React, { useEffect } from 'react';
 import Pulse from '@ui/Pulse/Pulse';
-import { useNotification } from '@utils/useNotification';
+import { useNotification } from '@core/notification/useNotification';
 import useGameStore from '@core/store/useGameStore';
-import { useAudio } from '@utils/AudioContext';
+import { useAudio } from '@core/audio/AudioContext';
 
 const OfficeComponent = () => {
 	const showNotification = useNotification();
-	const { nextAction, addEmail } = useGameStore();
+	const { nextAction, emails, addEmail } = useGameStore();
 	const { setMusicSource, setEffectSource, setVoiceSource } = useAudio();
 
 	useEffect(() => {
 		const timer = setTimeout(() => {
 			showNotification('Это офис. Здесь твоё рабочее место. Проверь электронную почту.');
 		}, 5000);
-		addEmail({
-			from: 'Федоров С.С',
-			theme: 'Новое дело',
-			text: 'Здравствуй, Алексей. В системе появилось новое сообщение...',
-		});
+		if (emails.length === 0) {
+			addEmail({
+				from: 'Федоров С.С',
+				theme: 'Новое дело',
+				text: 'Здравствуй, Алексей. В системе появилось новое сообщение...',
+			});
+		}
 		return () => clearTimeout(timer);
 	}, []);
 

@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom/client';
 import App from './App.jsx';
 import './index.css';
 
-import { AudioProvider } from '@utils/AudioContext';
-import { NotificationProvider } from '@utils/NotificationContext';
+import { AudioProvider } from '@core/audio/AudioContext';
+import { NotificationProvider } from '@core/notification/NotificationContext';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
 	<AudioProvider>

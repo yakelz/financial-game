@@ -23,9 +23,8 @@ const AppRouter = () => {
 					{/* {active && ( */}
 					<>
 						<Route element={<Layout />}>
-							<Route path='/office' element={<Office />} />
+							<Route path='/game' element={<Office />} />
 						</Route>
-						<Route path='/computer' element={<Computer />} />
 					</>
 					{/* )} */}
 				</Routes>

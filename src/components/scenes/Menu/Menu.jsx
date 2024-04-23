@@ -4,7 +4,7 @@ import { useSpring, animated } from 'react-spring';
 import { useNavigate, Link } from 'react-router-dom';
 import IntroVideo from '../Intro/IntroVideo';
 
-import { useAudio } from '@utils/AudioContext';
+import { useAudio } from '@core/audio/AudioContext';
 
 import VolumeButton from '@ui/Buttons/VolumeButton/VolumeButton';
 import PlayButton from '@ui/Buttons/PlayButton/PlayButton';
@@ -25,7 +25,7 @@ function Menu() {
 	};
 
 	const videoEnded = () => {
-		navigate('/office');
+		navigate('/game');
 	};
 
 	// Анимация для заголовка

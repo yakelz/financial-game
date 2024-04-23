@@ -1,5 +1,5 @@
 import { useContext, useRef, useEffect } from 'react';
-import { useAudio } from '@utils/AudioContext';
+import { useAudio } from '@core/audio/AudioContext';
 
 export const useAudioUnlocker = () => {
 	const hasAudioBeenUnlocked = useRef(false);

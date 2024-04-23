@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import styles from './SettingsModal.module.css';
 
-import { useAudio } from '@utils/AudioContext';
+import { useAudio } from '@core/audio/AudioContext';
 
 const SettingsModal = ({ onClose }) => {
 	const {

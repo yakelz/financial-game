@@ -1,7 +1,7 @@
 import './Fonts.css';
-import AppRouter from './utils/Router';
-import FullScreenPrompt from '@utils/FullScreenPromt';
-import { useAudioUnlocker } from '@utils/AudioUnlocker';
+import AppRouter from '@core/utils/Router';
+import FullScreenPrompt from '@core/utils/FullScreenPromt';
+import { useAudioUnlocker } from '@core/audio/AudioUnlocker';
 
 function App() {
 	useAudioUnlocker();
