@@ -6,6 +6,28 @@
 	background-color: #302348;
 }
 
+.instruments img {
+	cursor: pointer;
+}
+
+@keyframes bounce {
+	0%,
+	80%,
+	100% {
+		transform: translateY(0);
+	}
+	40% {
+		transform: translateY(-10px);
+	}
+	60% {
+		transform: translateY(-2px);
+	}
+}
+
+.instruments li:hover {
+	animation: bounce 2s ease infinite;
+}
+
 @media (max-width: 1024px) {
 	.instruments {
 		gap: 30px;

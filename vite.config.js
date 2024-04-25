@@ -12,7 +12,15 @@ export default defineConfig({
 			'@core': path.resolve(__dirname, 'src/core/'),
 		},
 	},
-	plugins: [svgr(), react()],
+
+	plugins: [
+		svgr({
+			svgrOptions: {
+				ref: true,
+			},
+		}),
+		react(),
+	],
 	server: {
 		port: 8080,
 	},

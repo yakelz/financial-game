@@ -1,5 +1,14 @@
 .applications {
-	background-color: #8edce8;
+	background: rgb(142, 220, 232);
+	background: -moz-radial-gradient(circle, rgba(142, 220, 232, 1) 50%, rgba(64, 162, 177, 1) 100%);
+	background: -webkit-radial-gradient(
+		circle,
+		rgba(142, 220, 232, 1) 50%,
+		rgba(64, 162, 177, 1) 100%
+	);
+	background: radial-gradient(circle, rgba(142, 220, 232, 1) 50%, rgba(64, 162, 177, 1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#8edce8",endColorstr="#40a2b1",GradientType=1);
+
 	height: 100vh;
 	width: 100%;
 

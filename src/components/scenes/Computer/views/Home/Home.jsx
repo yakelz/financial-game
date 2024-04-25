@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import styles from './Home.module.css';
-
+import animateStyles from './HomeBackground.module.css';
+import { useAudio } from '@core/audio/AudioContext';
 import getAction from '@core/actions/getAction';
 import useViewStore from '@core/store/useViewStore';
 
@@ -16,7 +17,7 @@ import Pulse from '@ui/Pulse/Pulse';
 
 function Home() {
 	const { setComputerSubView, setOfficeSubView, setView, pulseRef } = useViewStore();
-
+	const { playEffectSound } = useAudio();
 	const { component: ActionComponent } = getAction('Home');
 
 	const emailRef = useRef(null);
@@ -40,17 +41,14 @@ function Home() {
 				className={styles.exit}
 				onClick={() => {
 					setView('office');
-					setOfficeSubView('table');
+					playEffectSound('./Audio/Sounds/computer_off.wav');
 				}}
 			>
 				<Exit />
 			</button>
 			<div className={styles.applications}>
 				<div className={styles.container}>
-					<button
-						className={`${styles.calendar} ${styles.pulse}`}
-						onClick={() => setComputerSubView('calendar')}
-					>
+					<button className={styles.calendar} onClick={() => setComputerSubView('calendar')}>
 						<Calendar />
 						<span>Календарь</span>
 					</button>
@@ -83,6 +81,18 @@ function Home() {
 						<span>Музыка</span>
 					</button>
 				</div>
+				<ul className={animateStyles.circles}>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ul>
 			</div>
 		</>
 	);

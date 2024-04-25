@@ -22,8 +22,6 @@ function Office() {
 				return <TableView />;
 			case 'door':
 				return <DoorView />;
-			case 'computer':
-				return <Computer />;
 			default:
 				return <FrontView />;
 		}

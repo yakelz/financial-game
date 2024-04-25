@@ -7,9 +7,9 @@ import styles from './Character.module.css';
 function Character({ onMenu }) {
 	const className = onMenu ? `${styles.character} ${styles.onMenu}` : styles.character;
 	return (
-		<div>
+		<>
 			<img className={className} src={character} alt='Главный персонаж' />
-		</div>
+		</>
 	);
 }
 

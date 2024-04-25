@@ -14,7 +14,7 @@ function Instruments() {
 			<li>
 				<Calendar />
 			</li>
-			<li>
+			<li className={styles.map}>
 				<Map />
 			</li>
 		</ul>

@@ -11,10 +11,14 @@ import React from 'react';
 import { useSpring, animated } from 'react-spring';
 import styles from './Background.module.css';
 
-function Background({ src }) {
+function Background({ src, children }) {
 	const fading = useSpring({
 		from: { opacity: 0 },
 		to: { opacity: 1 },
+		config: {
+			friction: 10,
+			tension: 50,
+		},
 	});
 
 	return (
@@ -24,7 +28,9 @@ function Background({ src }) {
 				...fading,
 				backgroundImage: `url(${src})`,
 			}}
-		></animated.div>
+		>
+			{children}
+		</animated.div>
 	);
 }
 

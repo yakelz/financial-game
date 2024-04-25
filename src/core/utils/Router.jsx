@@ -4,8 +4,7 @@ import { Navigate, BrowserRouter as Router, Routes, Route } from 'react-router-d
 import Layout from './Layout';
 
 import Menu from '@scenes/Menu/Menu';
-import Office from '@scenes/Office/Office';
-import Computer from '@scenes/Computer/Computer';
+import Game from '@core/Game';
 
 const AppRouter = () => {
 	// const [active, setActive] = useState(false);
@@ -23,7 +22,7 @@ const AppRouter = () => {
 					{/* {active && ( */}
 					<>
 						<Route element={<Layout />}>
-							<Route path='/game' element={<Office />} />
+							<Route path='/game' element={<Game />} />
 						</Route>
 					</>
 					{/* )} */}

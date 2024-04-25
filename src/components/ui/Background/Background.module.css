@@ -9,3 +9,8 @@
 	background-repeat: no-repeat;
 	z-index: -100;
 }
+
+.background svg {
+	width: 100%;
+	height: 100%;
+}

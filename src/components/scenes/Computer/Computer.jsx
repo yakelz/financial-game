@@ -1,4 +1,6 @@
+import React, { useEffect } from 'react';
 import useViewStore from '@core/store/useViewStore';
+import { useAudio } from '@core/audio/AudioContext';
 
 import Protocol from './views/Protocol/Protocol';
 import Home from './views/Home/Home';
@@ -12,7 +14,11 @@ import CloseButton from '@ui/Buttons/CloseButton/CloseButton';
 import styles from './Computer.module.css';
 
 function Computer() {
+	const { playEffectSound } = useAudio();
 	const { computerSubView, setComputerSubView } = useViewStore();
+	useEffect(() => {
+		playEffectSound('./Audio/Sounds/computer_on.wav');
+	}, []);
 
 	const renderView = () => {
 		switch (computerSubView) {
