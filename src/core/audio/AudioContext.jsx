@@ -51,6 +51,11 @@ export const AudioProvider = ({ children }) => {
 		}
 	}, [voiceSrc]);
 
+	const setVoiceSource = (src, onEnded = () => {}) => {
+		setVoiceSrc(src);
+		voiceRef.current.onended = onEnded; // Назначаем обработчик завершения
+	};
+
 	useEffect(() => {
 		const musicPlayer = musicRef.current;
 
@@ -141,7 +146,7 @@ export const AudioProvider = ({ children }) => {
 				// Voice controls
 				playVoice: () => voiceRef.current.play(),
 				pauseVoice: () => voiceRef.current.pause(),
-				setVoiceSource: (src) => setVoiceSrc(src),
+				setVoiceSource,
 				setVoiceVolume,
 
 				// Volume (for settings)
