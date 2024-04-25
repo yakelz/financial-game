@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useSpring, animated } from 'react-spring';
 
 import useDialogStore from '@core/store/useDialogStore';
@@ -20,10 +20,31 @@ function Dialog() {
 	const [answerText, setAnswerText] = useState('');
 	const [questionText, setQuestionText] = useState('');
 
+	const [isTyping, setIsTyping] = useState(false);
+
 	const handleChoice = (choice) => {
 		setShowChoices(false);
 		setShowQuestion(true);
 		setSelectedChoice(choice);
+	};
+
+	const typingInterval = useRef(null);
+
+	const skipDialog = () => {
+		console.log(isTyping);
+		if (isTyping) {
+			return;
+		}
+		clearInterval(typingInterval.current);
+		if (selectedChoice) {
+			setCurrentDialogId(selectedChoice.responseId); // Устанавливаем следующий ID диалога
+			setShowQuestion(false);
+			if (dialogues[selectedChoice.responseId].speech) {
+				setShowAnswer(true); // Показываем ответ, если есть
+			} else {
+				setShowChoices(true); // Показываем следующий выбор, если нет ответа
+			}
+		}
 	};
 
 	// Анимация для выезда choices справа налево
@@ -39,12 +60,17 @@ function Dialog() {
 			typeText(selectedChoice.text, setQuestionText, selectedChoice.audio, () => {
 				setCurrentDialogId(selectedChoice.responseId);
 				setShowAnswer(true);
+				// Если должно идти сразу два вопроса подряд, тогда speech == null
+				if (!dialogues[selectedChoice.responseId].speech) {
+					setShowChoices(true);
+				}
 			});
 		}
 	}, [selectedChoice, showQuestion]);
 
 	useEffect(() => {
 		if (currentDialog.speech && showAnswer) {
+			setIsTyping(true);
 			typeText(currentDialog.speech, setAnswerText, currentDialog.audio, () => {
 				setShowChoices(true);
 			});
@@ -53,6 +79,7 @@ function Dialog() {
 
 	function typeText(text, setText, audio, onFinished) {
 		setText(''); // Сбрасываем текст
+
 		setVoiceSource(audio, () => {
 			onFinished && onFinished();
 		});
@@ -61,12 +88,13 @@ function Dialog() {
 		setText((prev) => {
 			let output = prev; // начинаем с пустой строки
 			let i = 0;
-			const typing = setInterval(() => {
+			typingInterval.current = setInterval(() => {
 				output += text.charAt(i);
 				setText(output); // Обновляем текст
 				i++;
 				if (i === text.length) {
-					clearInterval(typing);
+					clearInterval(typingInterval.current);
+					setIsTyping(false);
 				}
 			}, 60);
 			return output; // Возвращаем начальное значение output
@@ -76,7 +104,7 @@ function Dialog() {
 	return (
 		<div className={styles.dialog}>
 			{showQuestion && (
-				<div className={styles.question}>
+				<div className={styles.question} onClick={skipDialog}>
 					<span>{questionText}</span>
 				</div>
 			)}
@@ -95,7 +123,7 @@ function Dialog() {
 							key={index}
 							className={styles.choice}
 							onClick={() => handleChoice(choice)}
-							disabled={choice.unlockCondition}
+							disabled={choice.lockCondition ? choice.lockCondition : false}
 						>
 							{choice.text}
 						</button>
