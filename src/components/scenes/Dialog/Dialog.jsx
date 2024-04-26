@@ -82,6 +82,7 @@ function Dialog() {
 
 		setVoiceSource(audio, () => {
 			onFinished && onFinished();
+			clearInterval(typingInterval.current);
 		});
 
 		// Установка текста после обнуления

@@ -84,6 +84,8 @@
 	cursor: not-allowed;
 	color: transparent;
 	background-image: url('./Assets/Icons/noise.png');
+	background-color: rgb(62 42 118 / 50%);
+	background-blend-mode: multiply;
 }
 
 .choice:disabled::before {
@@ -93,8 +95,8 @@
 	transform: translateY(-50%);
 	left: 2%;
 	top: 50%;
-	width: 30px;
-	height: 30px;
+	width: 50px;
+	height: 50px;
 	background-size: 100% 100%;
 	background-repeat: no-repeat;
 	display: block;

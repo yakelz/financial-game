@@ -19,14 +19,14 @@ const dialogues = {
 			{
 				id: 1,
 				text: 'Сотрудники полиции не проводят следственные мероприятия по телефону.',
-				audio: './Audio/Voices/Grandmother/2-1.mp3',
+				audio: './Audio/Voices/Grandmother/1-2.mp3',
 				responseId: 3,
 			},
 		],
 	},
 	3: {
 		id: 3,
-		audio: './Audio/Voices/Grandmother/res2-1.mp3',
+		audio: './Audio/Voices/Grandmother/res1-2.mp3',
 		name: 'Валентина Павловна',
 		speech: 'Тогда кто мне звонил?',
 		choices: [
@@ -63,6 +63,7 @@ const dialogues = {
 				text: 'Сколько средств Вы перевели на "безопасный" счет?',
 				audio: './Audio/Voices/Grandmother/5-1.mp3',
 				responseId: 7,
+				lockCondition: true,
 			},
 			{
 				id: 2,

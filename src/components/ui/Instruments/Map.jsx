@@ -5,7 +5,7 @@ import map from '@assets/UI/Icons/map.svg';
 
 function Map() {
 	const { setView } = useViewStore();
-	const [open, setOpen] = useState(false);
+	const [open, setOpen] = useState(true);
 	return (
 		<>
 			<img
