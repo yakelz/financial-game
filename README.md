@@ -1,3 +1,3 @@
 # Разработка обучающей веб-игры о личной финансовой безопасности
 
-React + Vite
+React + Vite + Zustand + ReactSpring

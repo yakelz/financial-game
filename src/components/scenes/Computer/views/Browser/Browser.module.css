@@ -1,0 +1,102 @@
+:root {
+	--padding-up-down: 35px;
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	background-color: white;
+}
+
+.container main {
+	flex-grow: 1;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.header {
+	color: white;
+	background-color: #5e93b7;
+	border-bottom: var(--padding-up-down) solid #8edce8;
+
+	position: sticky;
+	z-index: 0;
+	top: 0;
+	left: 0;
+	width: 100%;
+	padding-top: var(--padding-up-down);
+
+	display: flex;
+}
+
+.header h2 {
+	font-size: 40px;
+	text-shadow: 5px 5px 0 rgba(0, 0, 0, 0.25);
+	font-family: 'Mplus';
+}
+
+.header svg {
+	width: 70px;
+	height: 70px;
+}
+
+.tab {
+	display: flex;
+	align-items: center;
+
+	max-width: 300px;
+	max-height: 100px;
+	cursor: pointer;
+}
+.tab:hover {
+	background-color: rgba(0, 0, 0, 0.1);
+	border-radius: 20px 20px 0 0;
+}
+
+.tab:first-child {
+	padding: 20px 30px 0 30px;
+}
+
+.tab.active {
+	background-color: #8edce8;
+	border-radius: 20px 20px 0 0;
+}
+.tab.active span {
+	border-right: none;
+}
+
+.tab span {
+	font-size: 28px;
+	text-align: center;
+	border-right: 4px solid #466e89;
+}
+
+@media (max-width: 1024px) {
+	:root {
+		--padding-up-down: 14px;
+	}
+	.header svg {
+		width: 40px;
+		height: 40px;
+	}
+	.header h2 {
+		font-size: 24px;
+		text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.25);
+	}
+	.tab {
+		max-width: 180px;
+	}
+	.tab span {
+		font-size: 18px;
+		border-right: 2px solid #466e89;
+	}
+	.tab.active {
+		padding: 0 15px 0 15px;
+	}
+	.tab:first-child {
+		padding: 10px 15px 0 15px;
+	}
+}

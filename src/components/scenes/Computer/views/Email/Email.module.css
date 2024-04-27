@@ -9,6 +9,7 @@
 }
 
 .inbox {
+	color: white;
 	background-color: #615298;
 	border-radius: 0 30px 30px 0;
 	box-shadow: 20px 20px 0px rgba(0, 0, 0, 0.25);
@@ -23,6 +24,7 @@
 }
 
 .header {
+	color: white;
 	background-color: #8edce8;
 	box-shadow: 0px 20px 0px rgba(0, 0, 0, 0.25);
 

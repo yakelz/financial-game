@@ -11,6 +11,8 @@ const useViewStore = create(
 		setOfficeSubView: (subView) => set({ officeSubView: subView }),
 		computerSubView: 'home',
 		setComputerSubView: (subView) => set({ computerSubView: subView }),
+		browserSubView: 'search',
+		setBrowserSubView: (subView) => set({ browserSubView: subView }),
 		pulseRef: null,
 		setPulseRef: (ref) => set({ pulseRef: ref }),
 	}))
