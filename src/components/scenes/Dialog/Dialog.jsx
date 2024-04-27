@@ -37,6 +37,9 @@ function Dialog() {
 		}
 		clearInterval(typingInterval.current);
 		if (selectedChoice) {
+			// if (!selectedChoice.responseId) {
+			// 	return;
+			// }
 			setCurrentDialogId(selectedChoice.responseId); // Устанавливаем следующий ID диалога
 			setShowQuestion(false);
 			if (dialogues[selectedChoice.responseId].speech) {
@@ -58,6 +61,9 @@ function Dialog() {
 	useEffect(() => {
 		if (selectedChoice && showQuestion) {
 			typeText(selectedChoice.text, setQuestionText, selectedChoice.audio, () => {
+				// if (!selectedChoice.responseId) {
+				// 	return;
+				// }
 				setCurrentDialogId(selectedChoice.responseId);
 				setShowAnswer(true);
 				// Если должно идти сразу два вопроса подряд, тогда speech == null
