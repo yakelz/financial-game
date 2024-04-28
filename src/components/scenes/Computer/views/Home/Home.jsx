@@ -2,7 +2,6 @@ import React, { useEffect, useRef } from 'react';
 import styles from './Home.module.css';
 import animateStyles from './HomeBackground.module.css';
 import { useAudio } from '@core/audio/AudioContext';
-import getAction from '@core/actions/getAction';
 import useViewStore from '@core/store/useViewStore';
 
 import Calendar from '@assets/UI/Icons/calendar.svg?react';
@@ -18,7 +17,6 @@ import Pulse from '@ui/Pulse/Pulse';
 function Home() {
 	const { setComputerSubView, setOfficeSubView, setView, pulseRef } = useViewStore();
 	const { playEffectSound } = useAudio();
-	const { component: ActionComponent } = getAction('Home');
 
 	const emailRef = useRef(null);
 	const protocolRef = useRef(null);

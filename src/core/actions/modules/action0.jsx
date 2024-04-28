@@ -3,14 +3,13 @@ import Pulse from '@ui/Pulse/Pulse';
 import { useNotification } from '@core/notification/useNotification';
 import useGameStore from '@core/store/useGameStore';
 import useViewStore from '@core/store/useViewStore';
-import { useAudio } from '@core/audio/AudioContext';
+
 import messages from '@core/data/messages';
 
 const OfficeComponent = () => {
 	const showNotification = useNotification();
-	const { nextAction, emails, addEmail } = useGameStore();
+	const { emails, addEmail } = useGameStore();
 	const { setPulseRef } = useViewStore();
-	const { setMusicSource, setEffectSource, setVoiceSource } = useAudio();
 
 	useEffect(() => {
 		const timer = setTimeout(() => {
@@ -22,23 +21,22 @@ const OfficeComponent = () => {
 		}
 		return () => clearTimeout(timer);
 	}, []);
+};
 
+const GameComponent = () => {
+	const { nextAction, emails } = useGameStore();
 	useEffect(() => {
+		console.log(emails);
 		// первое письмо про "новое дело"
 		if (emails.length > 0 && emails[0].read) {
 			nextAction();
 		}
 	}, [emails]);
-
-	useEffect(() => {
-		setMusicSource('./Audio/Music/losyash.mp3');
-	}, [setMusicSource]);
-
-	return null;
 };
 
 export default {
 	Office: {
 		component: OfficeComponent,
 	},
+	Game: { component: GameComponent },
 };

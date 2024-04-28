@@ -16,6 +16,7 @@ import styles from './Computer.module.css';
 function Computer() {
 	const { playEffectSound } = useAudio();
 	const { computerSubView, setComputerSubView } = useViewStore();
+
 	useEffect(() => {
 		playEffectSound('./Audio/Sounds/computer_on.wav');
 	}, []);

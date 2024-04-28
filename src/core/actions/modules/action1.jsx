@@ -6,7 +6,7 @@ import useViewStore from '@core/store/useViewStore';
 import { useAudio } from '@core/audio/AudioContext';
 import cases from '@core/data/cases';
 
-const OfficeComponent = () => {
+const GameComponent = () => {
 	const showNotification = useNotification();
 	const { setPulseRef } = useViewStore();
 	const { nextAction, caseItems, addCaseItem } = useGameStore();
@@ -28,7 +28,7 @@ const OfficeComponent = () => {
 };
 
 export default {
-	Office: {
-		component: OfficeComponent,
+	Game: {
+		component: GameComponent,
 	},
 };

@@ -11,9 +11,9 @@ export const AudioProvider = ({ children }) => {
 
 	const [isMuted, setIsMuted] = useState(false);
 
-	const [musicVolume, setMusicVolume] = useState(localStorage.getItem('musicVolume') || 0.2); // Громкость музыки
-	const [effectsVolume, setEffectsVolume] = useState(localStorage.getItem('effectsVolume') || 0.2); // Громкость эффектов
-	const [voiceVolume, setVoiceVolume] = useState(localStorage.getItem('voiceVolume') || 0.2); // Громкость голоса
+	const [musicVolume, setMusicVolume] = useState(localStorage.getItem('musicVolume') || 0.3); // Громкость музыки
+	const [effectsVolume, setEffectsVolume] = useState(localStorage.getItem('effectsVolume') || 1); // Громкость эффектов
+	const [voiceVolume, setVoiceVolume] = useState(localStorage.getItem('voiceVolume') || 0.6); // Громкость голоса
 
 	const musicRef = useRef(new Audio());
 	const effectRef = useRef(new Audio());

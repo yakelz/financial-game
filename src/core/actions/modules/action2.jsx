@@ -4,7 +4,7 @@ import { useNotification } from '@core/notification/useNotification';
 import useGameStore from '@core/store/useGameStore';
 import messages from '@core/data/messages';
 
-const OfficeComponent = () => {
+const GameComponent = () => {
 	const showNotification = useNotification();
 	const { nextAction, emails, addEmail } = useGameStore();
 
@@ -22,7 +22,7 @@ const OfficeComponent = () => {
 };
 
 export default {
-	Office: {
-		component: OfficeComponent,
+	Game: {
+		component: GameComponent,
 	},
 };
