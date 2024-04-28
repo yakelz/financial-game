@@ -3,3 +3,11 @@
 	position: fixed;
 	width: 28vw;
 }
+
+.mouth {
+	visibility: hidden;
+	position: fixed;
+	width: 3vw;
+	height: 3vh;
+	z-index: 1;
+}

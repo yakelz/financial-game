@@ -2,6 +2,8 @@ import { create } from 'zustand';
 import grandmother from '@core/data/dialogues/grandmother';
 
 const useDialogStore = create((set, get) => ({
+	answerPhonemes: '',
+	setAnswerPhonemes: (answerPhonemes) => set({ answerPhonemes }),
 	currentDialogId: 1,
 	dialogues: grandmother,
 	setCurrentDialogId: (id) => set({ currentDialogId: id }),

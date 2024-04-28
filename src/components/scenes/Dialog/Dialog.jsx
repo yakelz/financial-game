@@ -8,7 +8,7 @@ import styles from './Dialog.module.css';
 
 function Dialog() {
 	const { setVoiceSource } = useAudio();
-	const { currentDialogId, dialogues, setCurrentDialogId } = useDialogStore();
+	const { currentDialogId, dialogues, setCurrentDialogId, setAnswerPhonemes } = useDialogStore();
 	const currentDialog = dialogues[currentDialogId];
 
 	const [showQuestion, setShowQuestion] = useState(false);
@@ -77,8 +77,10 @@ function Dialog() {
 	useEffect(() => {
 		if (currentDialog.speech && showAnswer) {
 			setIsTyping(true);
+			setAnswerPhonemes(currentDialog.phonemes || currentDialog.speech);
 			typeText(currentDialog.speech, setAnswerText, currentDialog.audio, () => {
 				setShowChoices(true);
+				setAnswerPhonemes(null);
 			});
 		}
 	}, [currentDialog, showAnswer]);
