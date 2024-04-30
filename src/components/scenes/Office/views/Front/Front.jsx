@@ -20,7 +20,7 @@ function Front() {
 				<TableArrow />
 			</ArrowButton>
 			<ArrowButton
-				position={{ bottom: '5%', left: '50%' }}
+				position={{ bottom: '5%', left: '60%' }}
 				onClick={() => setOfficeSubView('door')}
 			>
 				<DoorArrow />

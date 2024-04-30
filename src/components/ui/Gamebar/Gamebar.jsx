@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './Gamebar.module.css';
 
 import Character from '../Character/Character';
@@ -8,15 +8,16 @@ import VolumeButton from '../Buttons/VolumeButton/VolumeButton';
 import Settings from '@scenes/Settings/Settings';
 
 function Gamebar() {
+	const [isActive, setActive] = useState(false);
 	return (
 		<>
 			<Settings />
 			<VolumeButton />
 			<Character />
-			<div className={styles.gamebar}>
+			<div className={`${styles.gamebar} ${isActive ? styles.active : ''}`}>
 				<Clock />
-				<Instruments />
 			</div>
+			<Instruments isActive={isActive} setActive={setActive} />
 		</>
 	);
 }

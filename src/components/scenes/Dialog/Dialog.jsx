@@ -20,8 +20,6 @@ function Dialog() {
 	const [answerText, setAnswerText] = useState('');
 	const [questionText, setQuestionText] = useState('');
 
-	const [isTyping, setIsTyping] = useState(false);
-
 	const handleChoice = (choice) => {
 		setShowChoices(false);
 		setShowQuestion(true);
@@ -29,26 +27,6 @@ function Dialog() {
 	};
 
 	const typingInterval = useRef(null);
-
-	const skipDialog = () => {
-		console.log(isTyping);
-		if (isTyping) {
-			return;
-		}
-		clearInterval(typingInterval.current);
-		if (selectedChoice) {
-			// if (!selectedChoice.responseId) {
-			// 	return;
-			// }
-			setCurrentDialogId(selectedChoice.responseId); // Устанавливаем следующий ID диалога
-			setShowQuestion(false);
-			if (dialogues[selectedChoice.responseId].speech) {
-				setShowAnswer(true); // Показываем ответ, если есть
-			} else {
-				setShowChoices(true); // Показываем следующий выбор, если нет ответа
-			}
-		}
-	};
 
 	// Анимация для выезда choices справа налево
 	const choicesSpring = useSpring({
@@ -61,9 +39,10 @@ function Dialog() {
 	useEffect(() => {
 		if (selectedChoice && showQuestion) {
 			typeText(selectedChoice.text, setQuestionText, selectedChoice.audio, () => {
-				// if (!selectedChoice.responseId) {
-				// 	return;
-				// }
+				if (!selectedChoice.responseId) {
+					// тут логика завершения диалога
+					return;
+				}
 				setCurrentDialogId(selectedChoice.responseId);
 				setShowAnswer(true);
 				// Если должно идти сразу два вопроса подряд, тогда speech == null
@@ -76,7 +55,6 @@ function Dialog() {
 
 	useEffect(() => {
 		if (currentDialog.speech && showAnswer) {
-			setIsTyping(true);
 			setAnswerPhonemes(currentDialog.phonemes || currentDialog.speech);
 			typeText(currentDialog.speech, setAnswerText, currentDialog.audio, () => {
 				setShowChoices(true);
@@ -88,9 +66,13 @@ function Dialog() {
 	function typeText(text, setText, audio, onFinished) {
 		setText(''); // Сбрасываем текст
 
+		// Запускаем воспроизведение аудио сразу и устанавливаем флаги
+		let audioFinished = false;
+		let typingFinished = false;
+
 		setVoiceSource(audio, () => {
-			onFinished && onFinished();
-			clearInterval(typingInterval.current);
+			audioFinished = true;
+			checkCompletion();
 		});
 
 		// Установка текста после обнуления
@@ -103,17 +85,24 @@ function Dialog() {
 				i++;
 				if (i === text.length) {
 					clearInterval(typingInterval.current);
-					setIsTyping(false);
+					typingFinished = true;
+					checkCompletion();
 				}
 			}, 60);
 			return output; // Возвращаем начальное значение output
 		});
+
+		function checkCompletion() {
+			if (audioFinished && typingFinished) {
+				onFinished && onFinished();
+			}
+		}
 	}
 
 	return (
 		<div className={styles.dialog}>
 			{showQuestion && (
-				<div className={styles.question} onClick={skipDialog}>
+				<div className={styles.question}>
 					<span>{questionText}</span>
 				</div>
 			)}

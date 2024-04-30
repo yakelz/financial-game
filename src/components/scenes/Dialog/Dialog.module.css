@@ -11,8 +11,6 @@
 	box-shadow: 15px 15px 0px rgba(0, 0, 0, 0.25);
 	padding: 30px;
 	font-size: 26px;
-	cursor: pointer;
-	transition: background-color 0.2s;
 }
 
 .answer {
@@ -75,8 +73,7 @@
 	transition: background-color 0.2s;
 }
 
-.choice:hover,
-.question:hover {
+.choice:hover {
 	background-color: #3a2b54;
 }
 
