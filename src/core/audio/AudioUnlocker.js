@@ -19,5 +19,5 @@ export const useAudioUnlocker = () => {
 		return () => {
 			document.removeEventListener('click', unlockAudio);
 		};
-	}, [setMusicSource]);
+	}, []);
 };

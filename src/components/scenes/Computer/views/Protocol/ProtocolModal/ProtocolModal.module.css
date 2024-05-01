@@ -54,8 +54,8 @@
 .close {
 	z-index: 101;
 	position: fixed;
-	top: 15%;
-	right: 30%;
+	top: 8%;
+	right: 8%;
 }
 
 @media (max-width: 1024px) {

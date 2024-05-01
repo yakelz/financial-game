@@ -19,13 +19,13 @@
 }
 
 .clouds {
-	animation: moveBackground 30s linear infinite;
+	animation: moveBackground 70s linear infinite;
 }
 
 .buildings {
-	animation: moveBackground 60s linear infinite;
+	animation: moveBackground 90s linear infinite;
 }
 
 .grass {
-	animation: moveBackground 30s linear infinite;
+	animation: moveBackground 35s linear infinite;
 }

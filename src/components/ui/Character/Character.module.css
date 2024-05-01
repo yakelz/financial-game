@@ -1,13 +1,13 @@
 .character {
 	position: fixed;
-	left: 0;
 	bottom: -180px;
 	z-index: 2;
+	left: 0;
 }
 
 .onMenu {
-	width: 1000px;
-	height: 1000px;
+	left: 10%;
+	width: 26vw;
 }
 
 @media (max-width: 1024px) {
@@ -17,8 +17,14 @@
 	}
 
 	.onMenu {
-		width: 250px;
-		bottom: -400px;
-		left: 150px;
+		width: 28vw;
+		left: 18%;
+	}
+}
+
+@media (max-width: 667px) {
+	.onMenu {
+		width: 35vw;
+		left: 18%;
 	}
 }

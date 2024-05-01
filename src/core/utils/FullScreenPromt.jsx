@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { isMobile } from 'react-device-detect';
 
 const FullScreenPrompt = () => {
 	const [showPrompt, setShowPrompt] = useState(false);
@@ -7,7 +8,12 @@ const FullScreenPrompt = () => {
 		const checkOrientationAndFullscreen = () => {
 			const isLandscape = window.innerWidth > window.innerHeight;
 			const isFullscreen = document.fullscreenElement != null;
-			setShowPrompt(!isLandscape || !isFullscreen);
+			// Показываем призыв к полноэкранному режиму только на мобильных устройствах
+			if (isMobile) {
+				setShowPrompt(!isLandscape || !isFullscreen);
+			} else {
+				setShowPrompt(!isLandscape);
+			}
 		};
 
 		checkOrientationAndFullscreen();
@@ -55,12 +61,24 @@ const FullScreenPrompt = () => {
 				zIndex: 1000,
 			}}
 		>
-			<div style={{ textAlign: 'center' }}>
+			<div style={{ textAlign: 'center', fontSize: '20px' }}>
 				<p>
-					Для лучшего опыта, пожалуйста, откройте на полный экран и поверните устройство
+					Для лучшего игрового опыта, пожалуйста, откройте на полный экран и поверните устройство
 					горизонтально.
 				</p>
-				<button onClick={requestFullscreen}>Открыть на полный экран</button>
+				<button
+					style={{
+						padding: '10px',
+						backgroundColor: 'white',
+						borderRadius: '10px',
+						fontWeight: 700,
+						color: 'black',
+						marginTop: '20px',
+					}}
+					onClick={requestFullscreen}
+				>
+					Открыть на полный экран
+				</button>
 			</div>
 		</div>
 	);
