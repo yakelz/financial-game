@@ -1,16 +1,53 @@
 import React from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+import 'swiper/css';
+import 'swiper/css/pagination';
+import './SwiperStyles.css';
+
+import { Pagination } from 'swiper/modules';
+
+import Slide1 from './Slides/Slide1';
+import Slide2 from './Slides/Slide2';
+import Slide3 from './Slides/Slide3';
+import Slide4 from './Slides/Slide4';
+import Slide5 from './Slides/Slide5';
+import Slide6 from './Slides/Slide6';
+import Slide7 from './Slides/Slide7';
+import Slide8 from './Slides/Slide8';
+import Slide9 from './Slides/Slide9';
 
 function PhoneScam() {
 	return (
-		<div>
-			<h2>Телефонное мошенничество</h2>
-			<p>
-				- это метод мошенничества, при котором злоумышленники, используя телефонную 
-				коммуникацию, играют определённую роль (сотрудника банка, правоохранительных 
-				органов, покупателя и т. д.) и под разными предлогами выманивают конфиденциальную информацию или стимулируют к совершению определённых действий со своим 
-				банковским счётом или платёжной картой.{' '}
-			</p>
-		</div>
+		<Swiper pagination={true} modules={[Pagination]} className='mySwiper'>
+			<SwiperSlide>
+				<Slide1 />
+			</SwiperSlide>
+			<SwiperSlide>
+				<Slide2 />
+			</SwiperSlide>
+			<SwiperSlide>
+				<Slide3 />
+			</SwiperSlide>
+			<SwiperSlide>
+				<Slide4 />
+			</SwiperSlide>
+			<SwiperSlide>
+				<Slide5 />
+			</SwiperSlide>
+			<SwiperSlide>
+				<Slide6 />
+			</SwiperSlide>
+			<SwiperSlide>
+				<Slide7 />
+			</SwiperSlide>
+			<SwiperSlide>
+				<Slide8 />
+			</SwiperSlide>
+			<SwiperSlide>
+				<Slide9 />
+			</SwiperSlide>
+		</Swiper>
 	);
 }
 

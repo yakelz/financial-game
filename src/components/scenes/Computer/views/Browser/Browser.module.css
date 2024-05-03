@@ -22,10 +22,6 @@
 	background-color: #5e93b7;
 	border-bottom: var(--padding-up-down) solid #8edce8;
 
-	position: sticky;
-	z-index: 0;
-	top: 0;
-	left: 0;
 	width: 100%;
 	padding-top: var(--padding-up-down);
 
