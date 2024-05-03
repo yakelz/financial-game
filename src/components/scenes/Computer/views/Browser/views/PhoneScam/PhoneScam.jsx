@@ -1,5 +1,6 @@
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import useGameStore from '@core/store/useGameStore';
 
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -18,8 +19,23 @@ import Slide8 from './Slides/Slide8';
 import Slide9 from './Slides/Slide9';
 
 function PhoneScam() {
+	const { currentActionIndex, nextAction } = useGameStore();
+	const checkLastSlide = (swiper) => {
+		const { activeIndex } = swiper;
+		// Проверяем, находимся ли мы на последнем слайде
+		if (activeIndex === 8 && currentActionIndex === 3) {
+			// Индекс последнего слайда
+			console.log('last');
+			nextAction();
+		}
+	};
 	return (
-		<Swiper pagination={true} modules={[Pagination]} className='mySwiper'>
+		<Swiper
+			pagination={true}
+			modules={[Pagination]}
+			className='mySwiper'
+			onSlideChange={checkLastSlide}
+		>
 			<SwiperSlide>
 				<Slide1 />
 			</SwiperSlide>

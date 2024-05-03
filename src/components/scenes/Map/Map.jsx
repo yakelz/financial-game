@@ -1,14 +1,52 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import Background from '@ui/Background/Background';
 import styles from './Map.module.css';
 import GameMap from '@assets/Map/map.svg?react';
+import getAction from '@core/actions/getAction';
+import Pulse from '@ui/Pulse/Pulse';
+import useViewStore from '@core/store/useViewStore';
+import useGameStore from '@core/store/useGameStore';
+import { useAudio } from '@core/audio/AudioContext';
 
 function Map() {
+	const { component: ActionComponent } = getAction('Map');
+	const { setView, pulseRef } = useViewStore();
+	const [showDayTransition, setShowDayTransition] = useState(false);
+	const { currentActionIndex, nextAction } = useGameStore();
+	const { playEffectSound } = useAudio();
+	const homeRef = useRef(null);
+	const officeRef = useRef(null);
+
+	const getCurrentRef = () => {
+		switch (pulseRef) {
+			case 'home':
+				return homeRef;
+			case 'office':
+				return officeRef;
+			default:
+				return null;
+		}
+	};
+
 	const svgRef = useRef(null);
 
 	const handlePoliceClick = () => console.log('Bank clicked');
-	const handleHomeClick = () => console.log('Home clicked');
-	const handleOfficeClick = () => console.log('Office clicked');
+	const handleHomeClick = () => {
+		playEffectSound('./Audio/Sounds/dig_click_02.wav');
+		if (currentActionIndex === 4) {
+			setShowDayTransition(true);
+			setTimeout(() => {
+				setShowDayTransition(false);
+			}, 4000);
+			nextAction();
+		}
+		console.log('Home clicked');
+	};
+	const handleOfficeClick = () => {
+		playEffectSound('./Audio/Sounds/dig_click_02.wav');
+		console.log('Office clicked');
+		setView('office');
+	};
 
 	useEffect(() => {
 		const svgNode = svgRef.current;
@@ -16,6 +54,10 @@ function Map() {
 			const bank = svgNode.querySelector('#bank');
 			const home = svgNode.querySelector('#home');
 			const office = svgNode.querySelector('#office');
+
+			// Привязываем homeRef.current к элементу home
+			homeRef.current = home;
+			officeRef.current = office;
 
 			if (bank) {
 				bank.addEventListener('click', handlePoliceClick);
@@ -48,11 +90,21 @@ function Map() {
 	}, []);
 
 	return (
-		<main>
-			<Background>
-				<GameMap ref={svgRef} />
-			</Background>
-		</main>
+		<>
+			{showDayTransition && (
+				<div className={styles.transitionOverlay}>
+					<div className={styles.dayText}>День второй.</div>
+				</div>
+			)}
+			{pulseRef && <Pulse targetRef={getCurrentRef()} />}
+			<main>
+				<ActionComponent />
+
+				<Background>
+					<GameMap ref={svgRef} />
+				</Background>
+			</main>
+		</>
 	);
 }
 

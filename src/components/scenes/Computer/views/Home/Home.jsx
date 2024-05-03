@@ -20,6 +20,7 @@ function Home() {
 
 	const emailRef = useRef(null);
 	const protocolRef = useRef(null);
+	const browserRef = useRef(null);
 
 	const getCurrentRef = () => {
 		switch (pulseRef) {
@@ -27,6 +28,8 @@ function Home() {
 				return emailRef;
 			case 'protocol':
 				return protocolRef;
+			case 'browser':
+				return browserRef;
 			default:
 				return null;
 		}
@@ -34,7 +37,7 @@ function Home() {
 
 	return (
 		<>
-			{pulseRef && <Pulse targetRef={getCurrentRef()} />}
+			{pulseRef && getCurrentRef() && <Pulse targetRef={getCurrentRef()} />}
 			<button
 				className={styles.exit}
 				onClick={() => {
@@ -70,7 +73,11 @@ function Home() {
 						<Files />
 						<span>Файлы</span>
 					</button>
-					<button className={styles.browser} onClick={() => setComputerSubView('browser')}>
+					<button
+						ref={browserRef}
+						className={styles.browser}
+						onClick={() => setComputerSubView('browser')}
+					>
 						<Browser />
 						<span>Браузер</span>
 					</button>

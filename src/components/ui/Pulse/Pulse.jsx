@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import styles from './Pulse.module.css';
 
-function Pulse({ targetRef }) {
+function Pulse({ targetRef, animate }) {
 	const [position, setPosition] = useState({ top: 0, left: 0 });
 
 	useEffect(() => {
@@ -33,6 +33,7 @@ function Pulse({ targetRef }) {
 				top: `${position.top}px`,
 				left: `${position.left}px`,
 				transform: 'translate(-50%, -50%)',
+				transition: animate ? 'all 0.3s ease' : 'none',
 			}}
 		>
 			<div className={styles.pulsating}></div>

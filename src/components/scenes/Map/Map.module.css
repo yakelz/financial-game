@@ -20,3 +20,48 @@
 	animation: hoverMove 1s ease-in-out infinite;
 	fill: rgba(0, 0, 0, 0.1);
 }
+
+.transitionOverlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 100;
+	background-color: black;
+	animation: fadeOut 4s;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+@keyframes fadeOut {
+	0% {
+		opacity: 0;
+	}
+	50% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+
+.dayText {
+	color: white;
+	font-size: 2rem;
+	opacity: 0;
+	animation: textAppear 4s;
+}
+
+@keyframes textAppear {
+	0% {
+		opacity: 0;
+	}
+	50% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}

@@ -11,7 +11,6 @@ function Protocol() {
 
 	const openModal = (index) => {
 		setCaseRead(index);
-		console.log(caseItems);
 		setModalOpen(true);
 	};
 

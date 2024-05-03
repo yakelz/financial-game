@@ -1,22 +1,22 @@
 import React, { useEffect } from 'react';
-import styles from './action3.module.css';
-import Grandmother from '@ui/MinorCharacters/Grandmother/Grandmother';
-import Dialog from '@scenes/Dialog/Dialog';
 
-const TableOfficeComponent = ({ svgRef }) => {
-	useEffect(() => {}, []);
+import { useNotification } from '@core/notification/useNotification';
+import useGameStore from '@core/store/useGameStore';
+import useViewStore from '@core/store/useViewStore';
+import messages from '@core/data/messages';
 
-	return (
-		<>
-			<Dialog />
-			<Grandmother svgRef={svgRef} />
-			<div className={styles.overlay}></div>
-		</>
-	);
+const GameComponent = () => {
+	const { setPulseRef } = useViewStore();
+
+	useEffect(() => {
+		setPulseRef('browser');
+	}, []);
+
+	return null;
 };
 
 export default {
-	Table: {
-		component: TableOfficeComponent,
+	Game: {
+		component: GameComponent,
 	},
 };
