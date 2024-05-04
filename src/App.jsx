@@ -7,7 +7,7 @@ function App() {
 	useAudioUnlocker();
 	return (
 		<>
-			{/* <FullScreenPrompt /> */}
+			<FullScreenPrompt />
 			<AppRouter />
 		</>
 	);

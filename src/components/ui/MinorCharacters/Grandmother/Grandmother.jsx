@@ -57,7 +57,7 @@ function Grandmother({ svgRef }) {
 				const leftMouth = mouthRect.left;
 				const topMouth = mouthRect.top;
 				mouthRef.current.style.left = `${leftMouth - 2}px`;
-				mouthRef.current.style.top = `${topMouth - 10}px`;
+				mouthRef.current.style.top = `${topMouth - 6}px`;
 				mouthRef.current.style.visibility = 'visible';
 			}
 		};

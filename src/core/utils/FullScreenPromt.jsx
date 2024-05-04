@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { isMobile } from 'react-device-detect';
+import RotateScreen from '@assets/UI/Icons/rotate-screen.svg?react';
 
 const FullScreenPrompt = () => {
 	const [showPrompt, setShowPrompt] = useState(false);
@@ -53,7 +54,7 @@ const FullScreenPrompt = () => {
 				left: 0,
 				width: '100%',
 				height: '100%',
-				backgroundColor: 'rgba(0, 0, 0, 0.5)',
+				backgroundColor: 'black',
 				color: 'white',
 				display: 'flex',
 				justifyContent: 'center',
@@ -62,6 +63,7 @@ const FullScreenPrompt = () => {
 			}}
 		>
 			<div style={{ textAlign: 'center', fontSize: '20px' }}>
+				<RotateScreen style={{ height: '100px', width: '100px' }} />
 				<p>
 					Для лучшего игрового опыта, пожалуйста, откройте на полный экран и поверните устройство
 					горизонтально.

@@ -7,13 +7,7 @@ function Search() {
 	return (
 		<div className={styles.search}>
 			<form role='search'>
-				<input
-					id='search'
-					type='search'
-					placeholder='Введите поисковый запрос...'
-					autoFocus
-					required
-				/>
+				<input id='search' type='search' placeholder='Введите поисковый запрос...' required />
 				<button type='submit'>
 					<Magnifier />
 				</button>
