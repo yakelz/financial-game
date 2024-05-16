@@ -9,11 +9,19 @@ const FullScreenPrompt = () => {
 		const checkOrientationAndFullscreen = () => {
 			const isLandscape = window.innerWidth > window.innerHeight;
 			const isFullscreen = document.fullscreenElement != null;
-			// Показываем призыв к полноэкранному режиму только на мобильных устройствах
-			if (isMobile) {
-				setShowPrompt(!isLandscape || !isFullscreen);
-			} else {
+
+			const isSafari = navigator.vendor.includes('Apple');
+
+			// Для Safari просто проверяем ориентацию
+			if (isSafari) {
 				setShowPrompt(!isLandscape);
+			} else {
+				// Показываем призыв к полноэкранному режиму только на мобильных устройствах
+				if (isMobile) {
+					setShowPrompt(!isLandscape || !isFullscreen);
+				} else {
+					setShowPrompt(!isLandscape);
+				}
 			}
 		};
 
@@ -52,8 +60,8 @@ const FullScreenPrompt = () => {
 				position: 'fixed',
 				top: 0,
 				left: 0,
-				width: '100%',
-				height: '100%',
+				width: '100vw',
+				height: '100vh',
 				backgroundColor: 'black',
 				color: 'white',
 				display: 'flex',

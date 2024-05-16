@@ -5,6 +5,7 @@ import styles from './Slide.module.css';
 function Slide4() {
 	return (
 		<div className={styles.page}>
+			<h2>Психологические приёмы мошенников</h2>
 			<img src={slide} alt='Четвертый слайд' />
 		</div>
 	);

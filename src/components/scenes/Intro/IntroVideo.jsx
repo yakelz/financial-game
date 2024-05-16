@@ -20,7 +20,7 @@ function IntroVideo({ onSkip }) {
 
 	return (
 		<div className={styles.video}>
-			<video ref={videoRef} width='100%' height='100%' autoPlay onEnded={onSkip}>
+			<video ref={videoRef} width='100%' height='100%' autoPlay onEnded={onSkip} playsInline>
 				<source src='./Video/intro.mp4' type='video/mp4' />
 				Ваш браузер не поддерживает видеотег.
 			</video>
