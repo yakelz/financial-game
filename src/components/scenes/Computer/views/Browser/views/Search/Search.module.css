@@ -19,6 +19,7 @@ input[type='search']::-webkit-search-results-decoration {
 }
 
 .search input[type='search'] {
+	background-color: white;
 	color: #5e5e5e;
 	font-size: 40px;
 	outline: 0;

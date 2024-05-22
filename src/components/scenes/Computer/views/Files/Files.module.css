@@ -60,6 +60,7 @@
 	gap: 20px;
 	cursor: pointer;
 	transition: all ease 0.2s;
+	color: black;
 }
 
 .file:hover {

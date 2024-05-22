@@ -47,6 +47,7 @@
 	font-family: 'Mplus';
 	font-size: 30px;
 	margin-bottom: 40px;
+	color: black;
 }
 .reminderCard {
 	display: flex;
@@ -94,7 +95,7 @@
 		text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.25);
 	}
 	.reminder {
-		font-size: 20px;
+		font-size: 16px;
 		margin-bottom: 20px;
 	}
 	.reminderCard {
@@ -102,5 +103,8 @@
 	}
 	.time {
 		width: 15%;
+	}
+	.time::after {
+		width: 4px;
 	}
 }

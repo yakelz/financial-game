@@ -17,13 +17,6 @@ function Calendar() {
 							<span className={styles.task}>взятие показаний Валентины Павловны</span>
 						</div>
 					</div>
-					<div className={styles.reminder}>
-						<span>24 апреля 2024</span>
-						<div className={styles.reminderCard}>
-							<span className={styles.time}>12:00</span>
-							<span className={styles.task}>взятие показаний Валентины Павловны</span>
-						</div>
-					</div>
 				</main>
 			</div>
 		</>
