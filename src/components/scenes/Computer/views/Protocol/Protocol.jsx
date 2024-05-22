@@ -22,7 +22,7 @@ function Protocol() {
 		<div className={styles.container}>
 			<header className={styles.header}>
 				<ProtocolIco />
-				<h2>Proтокол</h2>
+				<h2>ПРОтокол</h2>
 			</header>
 			<div className={styles.tab}>Мои дела</div>
 			<main>

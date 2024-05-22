@@ -12,8 +12,193 @@
 }
 
 .modal {
-	background-color: white;
-	padding: 20px;
+	background-color: #0b5681;
+	box-shadow: 6px 6px 0px #084061;
+	padding: 2vw 3vw;
+	border-radius: 10px;
+	color: white;
+	position: relative;
+}
+
+.modal svg {
+	width: 50px;
+	height: 50px;
+	vertical-align: middle;
+	margin-right: 10px;
+}
+
+.modal h2 {
+	text-align: center;
+	font-size: 35px;
+	text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.25);
+}
+
+.modal div {
+	display: flex;
+	align-items: center;
+}
+
+.close {
+	position: absolute;
+	top: -20px;
+	right: -30px;
+}
+
+input[type='range'] {
+	-webkit-appearance: none;
+	appearance: none;
+	width: 12vw;
+	background: transparent;
+	margin-left: 10px;
+}
+
+input[type='range']::-webkit-slider-runnable-track {
+	width: 100%;
+	height: 0.5vw;
+	cursor: pointer;
+	background: linear-gradient(
+		to right,
+		#084061 0%,
+		#084061 var(--value),
+		#b0b0b0 var(--value),
+		#b0b0b0 100%
+	);
 	border-radius: 5px;
-	color: black;
+}
+
+input[type='range']::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	appearance: none;
+	width: 1vw;
+	height: 1vw;
+	background: white;
+	border-radius: 50%;
+	box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.25);
+	cursor: pointer;
+	margin-top: -0.25vw; /* Это для выравнивания thumb с треком */
+	position: relative;
+	z-index: 1;
+}
+
+input[type='range']::-moz-range-track {
+	width: 100%;
+	height: 0.5vw;
+	cursor: pointer;
+	background: #b0b0b0;
+	border-radius: 5px;
+}
+
+input[type='range']::-moz-range-progress {
+	background-color: #084061;
+	border-radius: 5px;
+	height: 0.5vw;
+}
+
+input[type='range']::-moz-range-thumb {
+	width: 1vw;
+	height: 1vw;
+	background: white;
+	border-radius: 50%;
+	box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.25);
+	cursor: pointer;
+}
+
+input[type='range']::-ms-track {
+	width: 100%;
+	height: 0.5vw;
+	cursor: pointer;
+	background: transparent;
+	border-color: transparent;
+	color: transparent;
+}
+
+input[type='range']::-ms-fill-lower {
+	background: #084061;
+	border-radius: 5px;
+}
+
+input[type='range']::-ms-fill-upper {
+	background: #b0b0b0;
+	border-radius: 5px;
+}
+
+input[type='range']::-ms-thumb {
+	width: 1vw;
+	height: 1vw;
+	background: white;
+	border-radius: 50%;
+	box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.25);
+	cursor: pointer;
+	margin-top: -0.25vw; /* Это для выравнивания thumb с треком */
+}
+
+input[type='range']:focus::-webkit-slider-runnable-track {
+	background: linear-gradient(
+		to right,
+		#084061 0%,
+		#084061 var(--value),
+		#b0b0b0 var(--value),
+		#b0b0b0 100%
+	);
+}
+
+input[type='range']:focus::-moz-range-track {
+	background: #b0b0b0;
+}
+
+input[type='range']:focus::-ms-fill-lower {
+	background: #084061;
+}
+
+input[type='range']:focus::-ms-fill-upper {
+	background: #b0b0b0;
+}
+
+@media (max-width: 1024px) {
+	.modal svg {
+		width: 40px;
+		height: 40px;
+	}
+
+	.modal h2 {
+		font-size: 20px;
+		text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.25);
+	}
+
+	input[type='range'] {
+		width: 20vw;
+	}
+
+	input[type='range']::-webkit-slider-runnable-track {
+		height: 1vw;
+	}
+
+	input[type='range']::-webkit-slider-thumb {
+		width: 2vw;
+		height: 2vw;
+		margin-top: -0.5vw;
+	}
+
+	input[type='range']::-moz-range-track {
+		height: 1vw;
+	}
+
+	input[type='range']::-moz-range-progress {
+		height: 1vw;
+	}
+
+	input[type='range']::-moz-range-thumb {
+		width: 2vw;
+		height: 2vw;
+	}
+
+	input[type='range']::-ms-track {
+		height: 1vw;
+	}
+
+	input[type='range']::-ms-thumb {
+		width: 2vw;
+		height: 2vw;
+		margin-top: -0.5vw;
+	}
 }

@@ -59,7 +59,7 @@ function Home() {
 						onClick={() => setComputerSubView('protocol')}
 					>
 						<Protocol />
-						<span>Proтокол</span>
+						<span>ПРОтокол</span>
 					</button>
 					<button
 						ref={emailRef}
@@ -67,7 +67,7 @@ function Home() {
 						onClick={() => setComputerSubView('email')}
 					>
 						<Mail />
-						<span>Email</span>
+						<span>Почта</span>
 					</button>
 					<button className={styles.files} onClick={() => setComputerSubView('files')}>
 						<Files />

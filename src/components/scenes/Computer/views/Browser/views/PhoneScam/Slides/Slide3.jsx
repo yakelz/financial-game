@@ -5,7 +5,6 @@ import styles from './Slide.module.css';
 function Slide3() {
 	return (
 		<div className={styles.page}>
-			<h2>5 признаков телефонного мошенничества</h2>
 			<img src={slide} alt='Третий слайд' />
 		</div>
 	);

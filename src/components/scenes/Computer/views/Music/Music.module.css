@@ -1,7 +1,7 @@
 .container {
 	width: 100%;
 	height: 100vh;
-	background-color: #f2c38f;
+	background-color: white;
 
 	display: flex;
 	align-items: center;
@@ -10,7 +10,7 @@
 
 .header {
 	color: white;
-	background-color: #8edce8;
+	background-color: #f2c38f;
 	box-shadow: 0px 20px 0px rgba(0, 0, 0, 0.25);
 
 	position: fixed;
@@ -37,9 +37,11 @@
 }
 
 .container main {
+	border: 1px solid black;
+	margin-top: 10vh;
 	width: 60%;
 	height: 60vh;
-	background-color: white;
+	background-color: #fef9f4;
 	box-shadow: 20px 20px 0px rgba(0, 0, 0, 0.25);
 	border-radius: 20px;
 	overflow-y: scroll;
@@ -49,8 +51,9 @@
 
 .track {
 	font-size: 30px;
-	padding: 30px;
+	padding: 10px 30px;
 	cursor: pointer;
+	transition: all ease 0.2s;
 
 	display: flex;
 	align-items: center;
@@ -58,8 +61,12 @@
 	color: black;
 }
 
+.track:not(:last-child) {
+	border-bottom: 2px solid #999999;
+}
+
 .track:hover {
-	background-color: #ebf5f5;
+	background-color: #fff0df;
 }
 
 .title {
@@ -76,7 +83,7 @@
 }
 
 .container main::-webkit-scrollbar-thumb {
-	background-color: #8edce8;
+	background-color: #f2c38f;
 	border-radius: 10px;
 	border: 0px solid transparent;
 	background-clip: padding-box;
@@ -94,6 +101,7 @@
 	}
 	.header h2 {
 		font-size: 24px;
+		text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.25);
 	}
 
 	.container main {

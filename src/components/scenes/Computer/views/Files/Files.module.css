@@ -1,0 +1,153 @@
+.container {
+	width: 100%;
+	height: 100vh;
+	background-color: white;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.header {
+	color: white;
+	background-color: #f37c48;
+	box-shadow: 10px 10px 0px rgba(0, 0, 0, 0.25);
+
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+
+	display: flex;
+	align-items: center;
+	gap: 30px;
+	padding: 30px 30px 20px 30px;
+}
+
+.header h2 {
+	font-size: 40px;
+	text-shadow: 5px 5px 0 rgba(0, 0, 0, 0.25);
+	font-family: 'Mplus';
+}
+
+.header svg {
+	width: 100px;
+	height: 100px;
+}
+
+.container main {
+	font-family: 'Mplus';
+	font-weight: 400;
+
+	width: 60%;
+	height: 60vh;
+	margin-top: 10vh;
+	background-color: #fff9f6;
+	box-shadow: 10px 10px 0px rgba(0, 0, 0, 0.25);
+	border: 1px solid black;
+	border-radius: 20px;
+	overflow-y: scroll;
+
+	padding: 20px 0;
+}
+
+.file {
+	font-size: 30px;
+	padding: 30px;
+	border-bottom: 2px solid #999999;
+	display: flex;
+	align-items: center;
+	gap: 20px;
+	cursor: pointer;
+	transition: all ease 0.2s;
+}
+
+.file:hover {
+	background-color: #f1ddd2;
+}
+
+.modal {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: white;
+	padding: 20px;
+	border-radius: 10px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+	max-height: 70vh;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+
+	z-index: 1000;
+}
+
+.modal img {
+	width: 30vw;
+}
+
+.close {
+	position: absolute;
+	top: -30px;
+	right: -30px;
+	z-index: 1001;
+}
+
+.modalOverlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+	z-index: 999;
+}
+
+.container main::-webkit-scrollbar {
+	width: 30px;
+}
+
+.container main::-webkit-scrollbar-track {
+	background: transparent;
+	border-radius: 10px;
+}
+
+.container main::-webkit-scrollbar-thumb {
+	background-color: #f37c48;
+	border-radius: 10px;
+	border: 0px solid transparent;
+	background-clip: padding-box;
+}
+
+@media (max-width: 1024px) {
+	.header {
+		padding: 10px 20px;
+		gap: 10px;
+		box-shadow: 0px 10px 0px rgba(0, 0, 0, 0.25);
+	}
+	.header svg {
+		width: 50px;
+		height: 50px;
+	}
+	.header h2 {
+		font-size: 24px;
+		text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.25);
+	}
+	.container main {
+		margin-top: 40px;
+		width: 80%;
+		box-shadow: 10px 10px 0px rgba(0, 0, 0, 0.25);
+		padding: 10px 0;
+	}
+
+	.file {
+		font-size: 20px;
+		padding: 10px 20px;
+		gap: 10px;
+	}
+
+	.file svg {
+		width: 30px;
+	}
+}
