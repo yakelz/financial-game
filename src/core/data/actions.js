@@ -4,7 +4,8 @@ const actions = [
 	{ id: 2, day: 1, action: 'Checking email', time: '10:10' },
 	{ id: 3, day: 1, action: 'Browser', time: '10:22' },
 	{ id: 4, day: 1, action: 'Go home', time: '18:00' },
-	{ id: 5, day: 1, action: 'Grandmother', time: '12:00' },
+	{ id: 5, day: 2, action: 'Day 2: Start working', time: '10:00' },
+	{ id: 6, day: 2, action: 'Day 2: Start working', time: '12:00' },
 ];
 
 export default actions;

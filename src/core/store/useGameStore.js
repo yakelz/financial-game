@@ -20,7 +20,7 @@ const useGameStore = create(
 				emails: [],
 				addEmail: (email) =>
 					set((state) => ({
-						emails: [...state.emails, { ...email, read: false }],
+						emails: [{ ...email, read: false }, ...state.emails],
 					})),
 				setEmailRead: (index) =>
 					set((state) => {

@@ -8,8 +8,12 @@
 	);
 	background: radial-gradient(circle, rgba(142, 220, 232, 1) 50%, rgba(64, 162, 177, 1) 100%);
 
-	height: 100vh;
+	height: 100%;
 	width: 100%;
+
+	padding-left: 10px;
+
+	overflow: hidden;
 
 	display: flex;
 	align-items: center;
@@ -17,123 +21,101 @@
 }
 .container {
 	display: grid;
-	grid-template-columns: repeat(3, 1fr);
-	gap: 60px;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 20px;
 }
 
+.container::-webkit-scrollbar {
+	display: none;
+}
 .applications button {
-	padding: 40px;
+	max-width: 8vw;
+	height: 18vh;
+	padding: 20px;
 	transition: transform 0.2s;
 	border-radius: 10%;
 	z-index: 1;
 
 	display: flex;
 	flex-direction: column;
+	justify-content: center;
 	align-items: center;
 }
 
 .applications button span {
-	font-size: 40px;
+	font-size: 30px;
 	color: white;
-	text-shadow: 5px 5px 0 rgba(0, 0, 0, 0.25);
+	text-shadow: 3px 3px 0 rgba(0, 0, 0, 0.25);
 	font-family: 'Mplus';
 	font-weight: 800;
 }
 
 .applications button svg {
-	width: 180px;
-	height: 180px;
+	width: 100px;
+	height: 100px;
 }
 
 .applications button:hover {
 	transform: scale(1.05);
 }
 
-.exit {
-	z-index: 1;
-	position: fixed;
-	top: 50px;
-	right: 50px;
-}
-
 .calendar {
 	background-color: #0fa7eb;
-	box-shadow: -25px 25px 0px #346880;
-}
-
-.protocol {
-	background-color: #12a2a1;
-	box-shadow: -25px 25px 0px #346868;
+	box-shadow: -10px 10px 0px #346880;
 }
 
 .email {
 	background-color: #433360;
-	box-shadow: -25px 25px 0px #251f31;
-}
-
-.files {
-	background-color: #f37c48;
-	box-shadow: -25px 25px 0px #bd4a46;
+	box-shadow: -10px 10px 0px #251f31;
 }
 
 .browser {
 	background-color: #615298;
-	box-shadow: -25px 25px 0px #433360;
+	box-shadow: -10px 10px 0px #433360;
 }
 
 .music {
 	background-color: #f2c38f;
-	box-shadow: -25px 25px 0px #ab7447;
+	box-shadow: -10px 10px 0px #ab7447;
 }
 
 @media (max-width: 1024px) {
 	.container {
-		gap: 20px;
+		gap: 10px;
+	}
+	.applications {
+		padding-left: 5px;
 	}
 	.applications button {
-		padding: 20px;
+		max-width: none;
+		width: 9vw;
+		height: 22vh;
+		padding: 4px;
 	}
+
 	.applications button svg {
-		width: 60px;
-		height: 60px;
+		width: 35px;
+		height: 35px;
 	}
 
 	.applications button span {
-		font-size: 16px;
+		font-size: 12px;
 		text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.25);
-	}
-
-	.exit {
-		top: 20px;
-		right: 20px;
-	}
-
-	.exit svg {
-		width: 70px;
-		height: 70px;
 	}
 
 	.calendar {
 		box-shadow: -5px 5px 0px #346880;
 	}
 
-	.protocol {
-		box-shadow: -10px 10px 0px #346868;
-	}
-
 	.email {
-		box-shadow: -10px 10px 0px #251f31;
-	}
-
-	.files {
-		box-shadow: -10px 10px 0px #bd4a46;
+		box-shadow: -5px 5px 0px #251f31;
 	}
 
 	.browser {
-		box-shadow: -10px 10px 0px #433360;
+		box-shadow: -5px 5px 0px #433360;
 	}
 
 	.music {
-		box-shadow: -10px 10px 0px #ab7447;
+		box-shadow: -5px 5px 0px #ab7447;
 	}
 }

@@ -25,7 +25,6 @@
 	--z-video: 20;
 	--z-notification: 20;
 
-	--z-dialog: 11;
 	--z-pulse: 10;
 
 	--z-main-character: 9;
@@ -33,7 +32,8 @@
 	--z-gamebar: 8;
 	--z-instruments: 7;
 	--z-phone-screen: 6;
-	--z-move-arrows: 5;
+	--z-dialog: 5;
+	--z-move-arrows: 4;
 
 	--z-minor-character: -5;
 	--z-overlay: -10;

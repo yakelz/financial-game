@@ -28,6 +28,7 @@
 	font-size: 40px;
 	text-shadow: 5px 5px 0 rgba(0, 0, 0, 0.25);
 	font-family: 'Mplus';
+	font-weight: 800;
 }
 
 .header svg {
@@ -45,7 +46,7 @@
 	box-shadow: 10px 10px 0px rgba(0, 0, 0, 0.25);
 	border-radius: 20px;
 	overflow-y: scroll;
-
+	font-family: 'Mplus';
 	padding: 20px 0;
 }
 
@@ -70,7 +71,7 @@
 }
 
 .title {
-	font-weight: 700;
+	font-weight: 800;
 }
 
 .container main::-webkit-scrollbar {
@@ -114,5 +115,9 @@
 	.track {
 		font-size: 16px;
 		padding: 10px 20px;
+	}
+
+	.container main::-webkit-scrollbar {
+		width: 20px;
 	}
 }

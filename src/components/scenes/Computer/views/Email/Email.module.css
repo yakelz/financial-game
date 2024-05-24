@@ -17,6 +17,7 @@
 
 	font-size: 40px;
 	font-family: 'Mplus';
+	font-weight: 800;
 
 	position: fixed;
 	top: 25%;
@@ -43,6 +44,7 @@
 	font-size: 40px;
 	text-shadow: 5px 5px 0 rgba(0, 0, 0, 0.25);
 	font-family: 'Mplus';
+	font-weight: 800;
 }
 
 .header svg {
@@ -59,10 +61,6 @@
 	border: 1px solid black;
 	border-radius: 20px;
 	overflow-y: scroll;
-
-	display: flex;
-	flex-direction: column-reverse;
-	justify-content: flex-end;
 
 	padding: 20px 0;
 }
@@ -86,6 +84,7 @@
 
 .from,
 .theme {
+	font-family: 'Mplus';
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
@@ -124,7 +123,7 @@
 
 .unread .from,
 .unread .theme {
-	font-weight: bold;
+	font-weight: 800;
 }
 
 /* Зелёный кружочек */
@@ -137,14 +136,6 @@
 	border-radius: 50%;
 	margin-right: 5px;
 	vertical-align: middle;
-}
-
-/* Стили для скрола */
-
-/* Стили для Firefox */
-.container main {
-	scrollbar-color: #433360 transparent;
-	scrollbar-width: auto;
 }
 
 .container main::-webkit-scrollbar {
@@ -197,5 +188,9 @@
 	.message {
 		font-size: 16px;
 		padding: 10px;
+	}
+
+	.container main::-webkit-scrollbar {
+		width: 20px;
 	}
 }

@@ -1,0 +1,107 @@
+.container {
+	width: 100%;
+	height: 100%;
+	background-color: white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.messages {
+	width: 85%;
+	height: 75%;
+	background-color: #faf7ff;
+	border: 1px solid #999999;
+	border-radius: 20px;
+	overflow-y: scroll;
+	box-shadow: 10px 10px 0px rgba(0, 0, 0, 0.25);
+}
+
+.message {
+	font-size: 24px;
+	padding: 10px;
+	cursor: pointer;
+	transition: all ease 0.2s;
+
+	display: flex;
+	flex-direction: column;
+
+	border-bottom: 1px solid #999999;
+	color: black;
+}
+
+.message:hover {
+	background-color: #e0d9ec;
+}
+
+.title {
+	font-size: 30px;
+	font-weight: 800;
+	display: flex;
+	flex-direction: column;
+}
+
+.text {
+	font-weight: 300;
+	color: #6d6d6d;
+
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: block;
+	flex-grow: 1;
+	max-width: 100%;
+}
+
+/* Стили для непрочитанного сообщения */
+.unread {
+	background-color: #f5f5ff;
+}
+
+/* Зелёный кружочек */
+.unread .from::before {
+	content: '';
+	display: inline-block;
+	width: 15px;
+	height: 15px;
+	background-color: green;
+	margin-right: 10px;
+	border-radius: 50%;
+	vertical-align: middle;
+}
+
+.container main::-webkit-scrollbar {
+	width: 20px;
+}
+
+.container main::-webkit-scrollbar-track {
+	background: transparent;
+	border-radius: 10px;
+}
+
+.container main::-webkit-scrollbar-thumb {
+	background-color: #433360;
+	border-radius: 10px;
+	border: 0px solid transparent;
+	background-clip: padding-box;
+}
+@media (max-width: 1024px) {
+	.messages {
+		width: 85%;
+		height: 75%;
+		border-radius: 14px;
+		box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.25);
+	}
+
+	.message {
+		font-size: 12px;
+		padding: 5px 8px;
+	}
+
+	.title {
+		font-size: 14px;
+	}
+
+	.container main::-webkit-scrollbar {
+		width: 10px;
+	}
+}

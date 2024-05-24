@@ -28,6 +28,7 @@
 	font-size: 40px;
 	text-shadow: 5px 5px 0 rgba(0, 0, 0, 0.25);
 	font-family: 'Mplus';
+	font-weight: 800;
 }
 
 .header svg {
@@ -45,6 +46,7 @@
 
 	font-size: 40px;
 	font-family: 'Mplus';
+	font-weight: 800;
 
 	position: fixed;
 	top: 25%;
@@ -53,7 +55,7 @@
 
 .container main {
 	font-family: 'Mplus';
-	font-weight: 400;
+	font-weight: 500;
 
 	width: 60%;
 	height: 60vh;
@@ -134,5 +136,8 @@
 	.case {
 		font-size: 16px;
 		padding: 10px;
+	}
+	.container main::-webkit-scrollbar {
+		width: 20px;
 	}
 }
