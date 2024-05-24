@@ -75,6 +75,9 @@ export const AudioProvider = ({ children }) => {
 	}, []);
 
 	const playEffectSound = (soundPath) => {
+		if (isMuted) {
+			return;
+		}
 		console.log(effectsVolume);
 		const audio = new Audio(soundPath);
 		audio.volume = effectsVolume;

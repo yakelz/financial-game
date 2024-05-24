@@ -16,6 +16,28 @@
 	text-rendering: optimizeLegibility;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+
+	--z-overlap: 10000;
+	--z-modal: 101;
+	--z-modal-overlay: 100;
+	--z-settings-btn: 30;
+	--z-volume-btn: 30;
+	--z-video: 20;
+	--z-notification: 20;
+
+	--z-dialog: 11;
+	--z-pulse: 10;
+
+	--z-main-character: 9;
+	--z-clock: 9;
+	--z-gamebar: 8;
+	--z-instruments: 7;
+	--z-phone-screen: 6;
+	--z-move-arrows: 5;
+
+	--z-minor-character: -5;
+	--z-overlay: -10;
+	--z-background: -100;
 }
 
 * {

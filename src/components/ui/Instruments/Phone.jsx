@@ -1,19 +1,12 @@
-import React from 'react';
-
-import phone from '@assets/UI/Icons/phone.svg';
+import React, { useState } from 'react';
 import useViewStore from '@core/store/useViewStore';
+import phone from '@assets/UI/Icons/phone.svg';
 
 function Phone() {
-	const { setView } = useViewStore();
+	const { isPhoneOpen, setPhoneOpen } = useViewStore();
 	return (
 		<>
-			<img
-				src={phone}
-				alt='Телефон'
-				onClick={() => {
-					setView('computer');
-				}}
-			/>
+			<img src={phone} alt='Телефон' onClick={() => setPhoneOpen(!isPhoneOpen)} />
 		</>
 	);
 }

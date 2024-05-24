@@ -5,9 +5,10 @@ import getAction from '@core/actions/getAction';
 import Office from '@scenes/Office/Office';
 import Computer from '@scenes/Computer/Computer';
 import Map from '@scenes/Map/Map';
+import PhoneScreen from '@scenes/Phone/PhoneScreen';
 
 function Game() {
-	const { view, setView } = useViewStore();
+	const { view, setView, isPhoneOpen } = useViewStore();
 	const { component: ActionComponent } = getAction('Game');
 
 	const renderView = () => {
@@ -25,6 +26,7 @@ function Game() {
 
 	return (
 		<>
+			{isPhoneOpen && <PhoneScreen />}
 			<ActionComponent />
 			{renderView()}
 		</>

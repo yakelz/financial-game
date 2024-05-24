@@ -8,7 +8,7 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	z-index: 100;
+	z-index: var(--z-modal);
 }
 .modal {
 	position: relative;
@@ -28,7 +28,7 @@
 }
 
 .close {
-	z-index: 101;
+	z-index: calc(var(--z-modal) + 1);
 	position: fixed;
 	top: 15%;
 	right: 25%;
@@ -39,7 +39,7 @@
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	z-index: 102;
+	z-index: calc(var(--z-modal) + 2);
 	min-width: 30vw;
 	min-height: 60vh;
 
@@ -74,19 +74,19 @@
 
 .raised {
 	transform: translate(-50%, -50%) translateY(-300px);
-	z-index: 102;
+	z-index: calc(var(--z-modal) + 2);
 	transition: transform 0.3s ease, z-index 0s ease 0.3s;
 }
 
 .above {
 	transform: translate(-50%, -50%) translateY(0);
-	z-index: 104;
+	z-index: calc(var(--z-modal) + 4);
 	transition: transform 0.3s ease, z-index 0s;
 }
 
 .messageFront {
 	pointer-events: none;
-	z-index: 103;
+	z-index: calc(var(--z-modal) + 3);
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -95,7 +95,7 @@
 }
 
 .messageBack {
-	z-index: 101;
+	z-index: calc(var(--z-modal) + 1);
 }
 
 @media (max-width: 1024px) {

@@ -36,19 +36,20 @@ function Files() {
 				</main>
 				{selectedFile && (
 					<>
-						<div className={styles.modalOverlay} onClick={handleCloseModal}></div>
-						<div className={styles.modal}>
-							<h2>{selectedFile.name}</h2>
-							{selectedFile.type === 'image' ? (
-								<img
-									src={selectedFile.content}
-									alt={selectedFile.name}
-									className={styles.modalImage}
-								/>
-							) : (
-								<p>{selectedFile.content}</p>
-							)}
-							<CloseButton className={styles.close} onClick={handleCloseModal} />
+						<div className={styles.modalBackground}>
+							<div className={styles.modal}>
+								<h2>{selectedFile.name}</h2>
+								{selectedFile.type === 'image' ? (
+									<img
+										src={selectedFile.content}
+										alt={selectedFile.name}
+										className={styles.modalImage}
+									/>
+								) : (
+									<p>{selectedFile.content}</p>
+								)}
+								<CloseButton className={styles.close} onClick={handleCloseModal} />
+							</div>
 						</div>
 					</>
 				)}

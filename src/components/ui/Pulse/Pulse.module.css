@@ -1,6 +1,6 @@
 .pulse {
 	position: absolute;
-	z-index: 5;
+	z-index: var(--z-pulse);
 	width: 200px;
 	height: 200px;
 	pointer-events: none;

@@ -3,7 +3,7 @@ import styles from './SettingsModal.module.css';
 import CloseButton from '@ui/Buttons/CloseButton/CloseButton';
 import { useAudio } from '@core/audio/AudioContext';
 
-import SettingsMute from '@assets/UI/Icons/settings_mute.svg?react';
+// import SettingsMute from '@assets/UI/Icons/settings_mute.svg?react';
 import SettingsMusic from '@assets/UI/Icons/settings_music.svg?react';
 import SettingsSound from '@assets/UI/Icons/settings_sound.svg?react';
 import SettingsVoice from '@assets/UI/Icons/settings_voice.svg?react';

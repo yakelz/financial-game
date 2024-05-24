@@ -9,6 +9,7 @@
 	bottom: 20px;
 	left: 20px;
 	transition: all 0.5s ease;
+	z-index: var(--z-instruments);
 }
 
 .instruments.active {

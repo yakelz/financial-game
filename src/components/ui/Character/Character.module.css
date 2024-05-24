@@ -1,7 +1,7 @@
 .character {
 	position: fixed;
 	bottom: -180px;
-	z-index: 2;
+	z-index: var(--z-main-character);
 	left: 0;
 }
 

@@ -10,7 +10,7 @@
 }
 
 .clockText {
-	z-index: 2;
+	z-index: var(--z-clock);
 	color: white;
 	font-size: 30px;
 	font-family: 'DigitalNumbers';

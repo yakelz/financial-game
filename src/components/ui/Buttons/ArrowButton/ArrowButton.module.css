@@ -1,5 +1,5 @@
 .button {
-	z-index: 3;
+	z-index: var(--z-move-arrows);
 }
 @media (max-width: 1024px) {
 	.button svg {

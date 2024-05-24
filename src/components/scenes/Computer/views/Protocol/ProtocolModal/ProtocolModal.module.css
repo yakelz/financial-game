@@ -8,7 +8,7 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	z-index: 100;
+	z-index: var(--z-modal);
 }
 .modal {
 	position: relative;
@@ -52,7 +52,7 @@
 }
 
 .close {
-	z-index: 101;
+	z-index: calc(var(--z-modal) + 1);
 	position: absolute;
 	top: -20px;
 	right: -30px;

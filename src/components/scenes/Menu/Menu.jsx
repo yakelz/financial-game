@@ -38,9 +38,9 @@ function Menu() {
 	return (
 		<main>
 			<Settings />
+			<VolumeButton />
 			{playVideo ? (
 				<>
-					<VolumeButton />
 					<IntroVideo onSkip={videoEnded} />
 				</>
 			) : (
