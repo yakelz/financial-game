@@ -22,7 +22,7 @@ function Back() {
 				<TableArrow />
 			</ArrowButton> */}
 			<ArrowButton
-				position={{ bottom: '5%', left: '60%' }}
+				position={{ bottom: '10%', left: '70%' }}
 				onClick={() => setOfficeSubView('front')}
 			>
 				<BackArrow />

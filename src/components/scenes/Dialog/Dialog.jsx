@@ -1,12 +1,14 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useSpring, animated } from 'react-spring';
-
+import useGameStore from '@core/store/useGameStore';
 import useDialogStore from '@core/store/useDialogStore';
 import { useAudio } from '@core/audio/AudioContext';
 
 import styles from './Dialog.module.css';
 
 function Dialog() {
+	const { nextAction } = useGameStore();
+
 	const { setVoiceSource } = useAudio();
 	const { currentDialogId, dialogues, setCurrentDialogId, setAnswerPhonemes } = useDialogStore();
 	const currentDialog = dialogues[currentDialogId];
@@ -41,6 +43,7 @@ function Dialog() {
 			typeText(selectedChoice.text, setQuestionText, selectedChoice.audio, () => {
 				if (!selectedChoice.responseId) {
 					// тут логика завершения диалога
+					nextAction();
 					return;
 				}
 				setCurrentDialogId(selectedChoice.responseId);

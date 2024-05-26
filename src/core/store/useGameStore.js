@@ -54,6 +54,12 @@ const useGameStore = create(
 						reminders[id] = { ...reminders[id], finished: true };
 						return { reminders };
 					}),
+
+				caseProgress: 0,
+				nextCaseProgress: () =>
+					set((state) => ({
+						caseProgress: state.caseProgress !== 7 ? state.caseProgress + 1 : state.caseProgress,
+					})),
 			}),
 			{
 				name: 'game-state',

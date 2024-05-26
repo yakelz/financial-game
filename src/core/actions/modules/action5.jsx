@@ -8,7 +8,7 @@ import useGameStore from '@core/store/useGameStore';
 import remindersList from '@core/data/reminders';
 
 const GameComponent = () => {
-	const { setView, setPulseRef } = useViewStore();
+	const { setView, setPulseRef, setOfficeSubView } = useViewStore();
 	const { setMusicSource } = useAudio();
 	const showNotification = useNotification();
 
@@ -20,6 +20,7 @@ const GameComponent = () => {
 		}
 
 		setView('map');
+		setOfficeSubView('front');
 		setMusicSource('./Audio/Music/Stationary Sign - Confused Mind.mp3');
 
 		const timer = setTimeout(() => {

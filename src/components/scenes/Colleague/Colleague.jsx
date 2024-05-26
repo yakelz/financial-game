@@ -1,18 +1,16 @@
+import React from 'react';
 import FrontView from './views/Front/Front';
-import BackView from './views/Back/Back';
+import BackView from './views/Door/Door';
 import TableView from './views/Table/Table';
 import DoorView from './views/Door/Door';
 
 import useViewStore from '@core/store/useViewStore';
-import getAction from '@core/actions/getAction';
 
-function Office() {
-	const { officeSubView, setView } = useViewStore();
-
-	const { component: ActionComponent } = getAction('Office');
+function Colleague() {
+	const { colleagueSubView } = useViewStore();
 
 	const renderView = () => {
-		switch (officeSubView) {
+		switch (colleagueSubView) {
 			case 'front':
 				return <FrontView />;
 			case 'back':
@@ -26,12 +24,7 @@ function Office() {
 		}
 	};
 
-	return (
-		<main>
-			<ActionComponent />
-			{renderView()}
-		</main>
-	);
+	return <main>{renderView()}</main>;
 }
 
-export default Office;
+export default Colleague;

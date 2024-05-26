@@ -7,12 +7,16 @@ const useViewStore = create(
 	devtools((set, get) => ({
 		view: 'office',
 		setView: (view) => set({ view }),
+
 		officeSubView: 'front',
-
 		setOfficeSubView: (subView) => set({ officeSubView: subView }),
-		computerSubView: 'home',
 
+		colleagueSubView: 'front',
+		setColleagueSubView: (subView) => set({ colleagueSubView: subView }),
+
+		computerSubView: 'home',
 		setComputerSubView: (subView) => set({ computerSubView: subView }),
+
 		browserSubView: 'search',
 		setBrowserSubView: (subView) => set({ browserSubView: subView }),
 

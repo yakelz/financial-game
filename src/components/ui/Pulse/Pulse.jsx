@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import ReactDOM from 'react-dom';
 import styles from './Pulse.module.css';
 
 function Pulse({ targetRef, animate }) {
@@ -26,7 +27,7 @@ function Pulse({ targetRef, animate }) {
 		};
 	}, [targetRef]);
 
-	return (
+	return ReactDOM.createPortal(
 		<div
 			className={styles.pulse}
 			style={{
@@ -37,7 +38,8 @@ function Pulse({ targetRef, animate }) {
 			}}
 		>
 			<div className={styles.pulsating}></div>
-		</div>
+		</div>,
+		document.getElementById('pulse-container') // Указываем, куда рендерить
 	);
 }
 

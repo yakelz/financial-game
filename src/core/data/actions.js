@@ -7,6 +7,7 @@ const actions = [
 
 	{ id: 5, day: 2, action: 'Start working', time: '10:00' },
 	{ id: 6, day: 2, action: 'Grandmother dialog', time: '12:00' },
+	{ id: 7, day: 2, action: 'Dialog end', time: '13:00' },
 ];
 
 export default actions;
