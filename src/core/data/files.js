@@ -1,19 +1,19 @@
 const files = [
-	{ id: 1, type: 'image', name: 'Изображение 1', content: '/Assets/Files/1.png' },
+	{ id: 0, type: 'image', name: 'Изображение 1', content: '/Assets/Files/1.png' },
 	{
-		id: 2,
+		id: 1,
 		type: 'text',
 		name: 'Текстовый файл 1',
 		content: 'Финансовая безопасность ',
 	},
 	{
-		id: 3,
+		id: 2,
 		type: 'text',
 		name: 'Текстовый файл 2',
 		content: 'Финансовая безопасность',
 	},
 	{
-		id: 4,
+		id: 3,
 		type: 'text',
 		name: 'Текстовый файл 3',
 		content: 'Финансовая безопасность ',

@@ -78,6 +78,13 @@
 	border-radius: 10px;
 }
 
+.noReminders {
+	padding: 20px;
+	text-align: center;
+	font-size: 30px;
+	color: #999999;
+}
+
 .task {
 	width: 70%;
 }

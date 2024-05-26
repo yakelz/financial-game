@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './SearchResult.module.css';
+import useDialogStore from '@core/store/useDialogStore';
 
 function SearchResult({ id, icon, title, breadcrumbs, description, innerHTML }) {
 	const [showInnerHTML, setShowInnerHTML] = useState(false);
@@ -11,9 +12,16 @@ function SearchResult({ id, icon, title, breadcrumbs, description, innerHTML }) 
 	const handleBackClick = () => {
 		setShowInnerHTML(false);
 	};
+	const { toggleChoiceLock } = useDialogStore();
+
+	useEffect(() => {
+		if (showInnerHTML && id === 'phone') {
+			toggleChoiceLock(8, 0);
+			toggleChoiceLock(12, 0);
+		}
+	}, [showInnerHTML]);
 
 	if (showInnerHTML) {
-		console.log(id);
 		return (
 			<div className={styles.inner}>
 				<button onClick={handleBackClick}>Назад</button>

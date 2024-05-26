@@ -33,13 +33,26 @@ const useGameStore = create(
 				caseItems: [],
 				addCaseItem: (caseItem) =>
 					set((state) => ({
-						caseItems: [...state.caseItems, { ...caseItem, read: false }],
+						caseItems: [{ ...caseItem, read: false }, ...state.caseItems],
 					})),
 				setCaseRead: (index) =>
 					set((state) => {
 						const caseItems = state.caseItems.slice();
 						caseItems[index] = { ...caseItems[index], read: true };
 						return { caseItems };
+					}),
+
+				// Calendar
+				reminders: [],
+				addReminder: (reminder) =>
+					set((state) => ({
+						reminders: [{ ...reminder, finished: false }, ...state.reminders],
+					})),
+				setReminderFinish: (id) =>
+					set((state) => {
+						const reminders = state.reminders.slice();
+						reminders[id] = { ...reminders[id], finished: true };
+						return { reminders };
 					}),
 			}),
 			{
