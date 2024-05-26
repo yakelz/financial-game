@@ -102,9 +102,9 @@
 
 @media (max-width: 1024px) {
 	.question {
-		left: 13%;
+		left: 15%;
 		bottom: 30%;
-		width: 40vw;
+		width: 35vw;
 		padding: 16px;
 		font-size: 16px;
 	}

@@ -4,11 +4,12 @@ import RotateScreen from '@assets/UI/Icons/rotate-screen.svg?react';
 
 const FullScreenPrompt = () => {
 	const [showPrompt, setShowPrompt] = useState(false);
-
+	const [isLandscape, setIsLandscape] = useState(window.innerWidth > window.innerHeight);
 	useEffect(() => {
 		const checkOrientationAndFullscreen = () => {
-			const isLandscape = window.innerWidth > window.innerHeight;
+			const currentIsLandscape = window.innerWidth > window.innerHeight;
 			const isFullscreen = document.fullscreenElement != null;
+			setIsLandscape(currentIsLandscape);
 
 			const isSafari = navigator.vendor.includes('Apple');
 
@@ -62,7 +63,7 @@ const FullScreenPrompt = () => {
 				left: 0,
 				width: '100vw',
 				height: '100vh',
-				backgroundColor: 'black',
+				backgroundColor: isLandscape ? 'rgba(0,0,0,0.9)' : 'black',
 				color: 'white',
 				display: 'flex',
 				justifyContent: 'center',

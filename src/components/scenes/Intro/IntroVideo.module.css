@@ -10,7 +10,7 @@
 .button {
 	position: absolute;
 	left: 50%;
-	bottom: 10%;
+	bottom: 20%;
 	z-index: calc(var(--z-video) + 1);
 	transform: translateX(-50%);
 

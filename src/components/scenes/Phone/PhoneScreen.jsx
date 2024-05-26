@@ -8,7 +8,7 @@ import Music from './views/Music/Music';
 import Browser from './views/Browser/Browser';
 import Calendar from './views/Calendar/Calendar';
 import styles from './PhoneScreen.module.css';
-
+import useGameStore from '@core/store/useGameStore';
 import HomeIcon from '@assets/Phone/home.svg?react';
 import BackIcon from '@assets/Phone/back.svg?react';
 
@@ -19,6 +19,9 @@ function PhoneScreen() {
 	const { playEffectSound } = useAudio();
 	const { phoneSubView, setPhoneSubView } = useViewStore();
 	const { isPhoneOpen, setPhoneOpen } = useViewStore();
+
+	const { actions, currentActionIndex } = useGameStore();
+	const currentAction = actions[currentActionIndex];
 
 	const containerSpring = useSpring({
 		from: { transform: 'translateY(100%)' },
@@ -61,7 +64,7 @@ function PhoneScreen() {
 			>
 				<animated.div style={containerSpring} className={styles.screen}>
 					<header style={phoneSubView !== 'home' ? { color: 'black' } : {}}>
-						<span>10:00</span>
+						<span>{currentAction.time}</span>
 						{phoneSubView !== 'home' ? <WifiDarkIcon /> : <WifiLightIcon />}
 					</header>
 					{renderView()}

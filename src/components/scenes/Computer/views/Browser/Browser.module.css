@@ -10,14 +10,6 @@
 	color: black;
 }
 
-.container main {
-	flex-grow: 1;
-
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-
 .header {
 	color: white;
 	background-color: #615298;
@@ -25,7 +17,9 @@
 
 	width: 100%;
 	padding-top: var(--padding-up-down);
-
+	position: sticky;
+	top: 0;
+	z-index: 1;
 	display: flex;
 }
 

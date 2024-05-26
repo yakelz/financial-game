@@ -48,7 +48,7 @@ function Browser() {
 					</span>
 				</div>
 			</header>
-			<main>{renderView()}</main>
+			{renderView()}
 		</div>
 	);
 }
