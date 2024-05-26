@@ -81,14 +81,14 @@
 	position: relative;
 	cursor: not-allowed;
 	color: transparent;
-	background-image: url('./Assets/Icons/noise.png');
+	background-image: url('/Assets/Icons/noise.png');
 	background-color: rgb(62 42 118 / 50%);
 	background-blend-mode: multiply;
 }
 
 .choice:disabled::before {
 	content: '';
-	background-image: url('./Assets/Icons/lock_choice.svg');
+	background-image: url('/Assets/Icons/lock_choice.svg');
 	position: absolute;
 	transform: translateY(-50%);
 	left: 2%;
