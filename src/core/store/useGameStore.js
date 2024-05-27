@@ -11,11 +11,12 @@ const useGameStore = create(
 				// Actions
 				actions: actions,
 				currentActionIndex: 0,
-				nextAction: () =>
+				nextAction: () => {
+					console.log('Change Action: ' + get().currentActionIndex);
 					set((state) => ({
 						currentActionIndex: (state.currentActionIndex + 1) % state.actions.length,
-					})),
-
+					}));
+				},
 				// Emails
 				emails: [],
 				addEmail: (email) =>
@@ -67,6 +68,7 @@ const useGameStore = create(
 				partialize: (state) => ({
 					currentActionIndex: state.currentActionIndex,
 					emails: state.emails,
+					reminders: state.reminders,
 					caseItems: state.caseItems,
 				}),
 			}

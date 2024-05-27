@@ -19,6 +19,9 @@ function SearchResult({ id, icon, title, breadcrumbs, description, innerHTML }) 
 			toggleChoiceLock(8, 0);
 			toggleChoiceLock(12, 0);
 		}
+		if (showInnerHTML && id === 'mastergrad') {
+			toggleChoiceLock(8, 0);
+		}
 	}, [showInnerHTML]);
 
 	if (showInnerHTML) {

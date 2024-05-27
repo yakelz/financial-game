@@ -1,12 +1,21 @@
 import { create } from 'zustand';
-import grandmother from '@core/data/dialogues/grandmother';
 
 const useDialogStore = create((set, get) => ({
 	answerPhonemes: '',
 	setAnswerPhonemes: (answerPhonemes) => set({ answerPhonemes }),
 	currentDialogId: 1,
-	dialogues: grandmother,
+	dialogues: null,
+	setDialog: (dialogData) =>
+		set({
+			dialogues: dialogData,
+		}),
 	setCurrentDialogId: (id) => set({ currentDialogId: id }),
+	resetDialog: () =>
+		set({
+			currentDialogId: 1,
+			answerPhonemes: '',
+			dialogues: null,
+		}),
 	toggleChoiceLock: (dialogId, choiceIndex) => {
 		const store = get(); // Получаем текущее состояние
 		const dialogues = store.dialogues;

@@ -23,7 +23,7 @@ function Door() {
 	return (
 		<>
 			{pulseRef && getCurrentRef() && <Pulse targetRef={getCurrentRef()} />}
-			{currentActionIndex !== 6 && (
+			{currentActionIndex === 7 && (
 				<ArrowButton
 					position={{ bottom: '50%', left: '45%' }}
 					onClick={() => {

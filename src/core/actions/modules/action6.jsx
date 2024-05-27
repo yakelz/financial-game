@@ -7,11 +7,15 @@ import { useEffect } from 'react';
 import useDialogStore from '@core/store/useDialogStore';
 import useGameStore from '@core/store/useGameStore';
 import { useNotification } from '@core/notification/useNotification';
+import grandmother from '@core/data/dialogues/grandmother';
 
 const GameComponent = () => {
 	const { setView, setOfficeSubView } = useViewStore();
 	const { setVoiceSource, playEffectSound } = useAudio();
+	const { setDialog } = useDialogStore();
+
 	useEffect(() => {
+		setDialog(grandmother);
 		playEffectSound('./Audio/Sounds/door_knock.mp3');
 		const timer = setTimeout(() => {
 			setVoiceSource('./Audio/Voices/Grandmother/0.mp3');

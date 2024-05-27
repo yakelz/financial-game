@@ -10,7 +10,9 @@ function Dialog() {
 	const { nextAction } = useGameStore();
 
 	const { setVoiceSource } = useAudio();
-	const { currentDialogId, dialogues, setCurrentDialogId, setAnswerPhonemes } = useDialogStore();
+	const { currentDialogId, resetDialog, dialogues, setCurrentDialogId, setAnswerPhonemes } =
+		useDialogStore();
+
 	const currentDialog = dialogues[currentDialogId];
 
 	const [showQuestion, setShowQuestion] = useState(false);
@@ -44,6 +46,7 @@ function Dialog() {
 				if (!selectedChoice.responseId) {
 					// тут логика завершения диалога
 					nextAction();
+
 					return;
 				}
 				setCurrentDialogId(selectedChoice.responseId);

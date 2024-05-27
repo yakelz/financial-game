@@ -14,6 +14,13 @@ function Calendar() {
 
 			return () => clearTimeout(timer);
 		}
+		if (currentActionIndex === 9 && reminders[1]) {
+			const timer = setTimeout(() => {
+				nextAction();
+			}, 2000);
+
+			return () => clearTimeout(timer);
+		}
 	}, []);
 
 	return (

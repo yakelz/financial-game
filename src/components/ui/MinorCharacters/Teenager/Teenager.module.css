@@ -1,0 +1,15 @@
+.teenager {
+	visibility: hidden;
+	position: fixed;
+	width: 28vw;
+	height: auto;
+	z-index: var(--z-minor-character);
+}
+
+.mouth {
+	visibility: hidden;
+	position: fixed;
+	width: 3vw;
+	height: 3vh;
+	z-index: 1;
+}
