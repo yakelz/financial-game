@@ -39,7 +39,6 @@
 .container main {
 	font-family: 'Mplus';
 	font-weight: 500;
-
 	width: 60%;
 	height: 60vh;
 	margin-top: 10vh;
@@ -77,6 +76,7 @@
 	max-height: 70vh;
 	display: flex;
 	flex-direction: column;
+	color: black;
 	gap: 20px;
 }
 

@@ -28,15 +28,14 @@ function Table() {
 				<ComputerArrow />
 			</ArrowButton>
 
-			{currentActionIndex !== 6 ||
-				(currentActionIndex !== 10 && (
-					<ArrowButton
-						position={{ bottom: '5%', left: '60%' }}
-						onClick={() => setOfficeSubView('front')}
-					>
-						<BackArrow />
-					</ArrowButton>
-				))}
+			{currentActionIndex !== 6 && currentActionIndex !== 10 && (
+				<ArrowButton
+					position={{ bottom: '5%', left: '60%' }}
+					onClick={() => setOfficeSubView('front')}
+				>
+					<BackArrow />
+				</ArrowButton>
+			)}
 
 			<Background>
 				<BackView ref={svgRef} />
