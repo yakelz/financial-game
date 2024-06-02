@@ -4,15 +4,14 @@ import useViewStore from '@core/store/useViewStore';
 import { useNotification } from '@core/notification/useNotification';
 import { useAudio } from '@core/audio/AudioContext';
 import useGameStore from '@core/store/useGameStore';
-import grandmother from '@core/data/dialogues/grandmother';
+
 import remindersList from '@core/data/reminders';
-import useDialogStore from '@core/store/useDialogStore';
 
 const GameComponent = () => {
 	const { setView, setPulseRef, setOfficeSubView } = useViewStore();
 	const { setMusicSource } = useAudio();
 	const showNotification = useNotification();
-	const { setDialog } = useDialogStore();
+
 	const { reminders, addReminder } = useGameStore();
 
 	useEffect(() => {
@@ -23,8 +22,6 @@ const GameComponent = () => {
 		setView('map');
 		setOfficeSubView('front');
 		setMusicSource('./Audio/Music/Stationary Sign - Confused Mind.mp3');
-
-		setDialog(grandmother);
 
 		const timer = setTimeout(() => {
 			showNotification('Сегодня предстоит насыщенный день. Отправляйся на работу');

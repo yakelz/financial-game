@@ -11,9 +11,10 @@ import teenagerDialog from '@core/data/dialogues/teenager';
 const GameComponent = () => {
 	const { setView, setOfficeSubView } = useViewStore();
 	const { playEffectSound } = useAudio();
-	const { setDialog } = useDialogStore();
+	const { setDialog, resetDialog } = useDialogStore();
 
 	useEffect(() => {
+		resetDialog();
 		setDialog(teenagerDialog);
 		playEffectSound('./Audio/Sounds/door_knock.mp3');
 		const timer = setTimeout(() => {
