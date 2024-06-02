@@ -5,24 +5,36 @@ import RotateScreen from '@assets/UI/Icons/rotate-screen.svg?react';
 const FullScreenPrompt = () => {
 	const [showPrompt, setShowPrompt] = useState(false);
 	const [isLandscape, setIsLandscape] = useState(window.innerWidth > window.innerHeight);
+	const [promptMessage, setPromptMessage] = useState('');
 	useEffect(() => {
 		const checkOrientationAndFullscreen = () => {
 			const currentIsLandscape = window.innerWidth > window.innerHeight;
-			const isFullscreen = document.fullscreenElement != null;
 			setIsLandscape(currentIsLandscape);
+			const isFullscreen = document.fullscreenElement != null;
 
-			const isSafari = navigator.vendor.includes('Apple');
-
-			// Для Safari просто проверяем ориентацию
-			if (isSafari) {
-				setShowPrompt(!isLandscape);
-			} else {
-				// Показываем призыв к полноэкранному режиму только на мобильных устройствах
+			if (document.fullscreenEnabled) {
 				if (isMobile) {
-					setShowPrompt(!isLandscape || !isFullscreen);
+					if (!currentIsLandscape && !isFullscreen) {
+						setShowPrompt(true);
+						setPromptMessage(
+							'Для лучшего игрового опыта, пожалуйста, откройте на полный экран и поверните устройство горизонтально.'
+						);
+					} else if (!currentIsLandscape) {
+						setShowPrompt(true);
+						setPromptMessage('Пожалуйста, поверните устройство горизонтально.');
+					} else if (!isFullscreen) {
+						setShowPrompt(true);
+						setPromptMessage('Для лучшего игрового опыта, пожалуйста, откройте на полный экран.');
+					} else {
+						setShowPrompt(false);
+					}
 				} else {
-					setShowPrompt(!isLandscape);
+					setShowPrompt(!currentIsLandscape);
+					setPromptMessage('Пожалуйста, поверните устройство горизонтально.');
 				}
+			} else {
+				setShowPrompt(!currentIsLandscape);
+				setPromptMessage('Пожалуйста, поверните устройство горизонтально.');
 			}
 		};
 
@@ -37,17 +49,24 @@ const FullScreenPrompt = () => {
 	}, []);
 
 	const requestFullscreen = () => {
-		if (document.documentElement.requestFullscreen) {
-			document.documentElement.requestFullscreen();
-		} else if (document.documentElement.mozRequestFullScreen) {
-			/* Firefox */
-			document.documentElement.mozRequestFullScreen();
-		} else if (document.documentElement.webkitRequestFullscreen) {
-			/* Chrome, Safari & Opera */
-			document.documentElement.webkitRequestFullscreen();
-		} else if (document.documentElement.msRequestFullscreen) {
-			/* IE/Edge */
-			document.documentElement.msRequestFullscreen();
+		try {
+			if (document.documentElement.requestFullscreen) {
+				document.documentElement.requestFullscreen();
+			} else if (document.documentElement.mozRequestFullScreen) {
+				/* Firefox */
+				document.documentElement.mozRequestFullScreen();
+			} else if (document.documentElement.webkitRequestFullscreen) {
+				/* Chrome, Safari & Opera */
+				document.documentElement.webkitRequestFullscreen();
+			} else if (document.documentElement.msRequestFullscreen) {
+				/* IE/Edge */
+				document.documentElement.msRequestFullscreen();
+			}
+		} catch (err) {
+			console.error('Не удалось войти в полноэкранный режим: ', err);
+			alert(
+				'Ошибка при попытке входа в полноэкранный режим. Проверьте настройки браузера и разрешения.'
+			);
 		}
 	};
 
@@ -73,10 +92,7 @@ const FullScreenPrompt = () => {
 		>
 			<div style={{ textAlign: 'center', fontSize: '20px' }}>
 				<RotateScreen style={{ height: '100px', width: '100px' }} />
-				<p>
-					Для лучшего игрового опыта, пожалуйста, откройте на полный экран и поверните устройство
-					горизонтально.
-				</p>
+				<p>{promptMessage}</p>
 				<button
 					style={{
 						padding: '10px',
