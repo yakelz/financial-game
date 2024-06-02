@@ -10,6 +10,16 @@
 	height: 150px;
 }
 
+@media (max-width: 1366px) {
+	.button {
+		left: 160px;
+	}
+	.button svg {
+		width: 120px;
+		height: 120px;
+	}
+}
+
 @media (max-width: 1024px) {
 	.button {
 		left: 130px;

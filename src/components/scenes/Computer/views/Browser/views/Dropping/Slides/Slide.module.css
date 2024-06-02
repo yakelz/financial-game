@@ -24,6 +24,15 @@
 	max-width: 60vw;
 }
 
+@media (max-width: 1366px) {
+	.page h2 {
+		font-size: 40px;
+	}
+	.page p {
+		font-size: 30px;
+	}
+}
+
 @media (max-width: 1024px) {
 	.page {
 		padding: 20px 40px;

@@ -13,3 +13,8 @@
 	height: 3vh;
 	z-index: 1;
 }
+@media (max-width: 1366px) {
+	.teenager {
+		width: 30vw;
+	}
+}

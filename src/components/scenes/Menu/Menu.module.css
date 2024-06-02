@@ -16,6 +16,14 @@
 	left: 25%;
 }
 
+@media (max-width: 1366px) {
+	.title {
+		font-size: 8em;
+		padding-left: 150px;
+		left: 30%;
+	}
+}
+
 @media (max-width: 1024px) {
 	.title {
 		font-size: 80px;

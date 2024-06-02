@@ -58,6 +58,15 @@
 	right: -30px;
 }
 
+@media (max-width: 1366px) {
+	.number {
+		font-size: 40px;
+	}
+	.title {
+		font-size: 20px;
+	}
+}
+
 @media (max-width: 1024px) {
 	.number {
 		font-size: 26px;

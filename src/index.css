@@ -4,7 +4,6 @@
 	--breakpoint-s: 844px; /* iPhone 12 */
 	--breakpoint-m: 1024px; /* iPad и нижний предел для планшетов */
 	--breakpoint-lg: 1180px; /* iPad Air и аналогичные устройства */
-	--breakpoint-xl: 1024px; /* Большие планшеты и небольшие настольные мониторы */
 
 	font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 	font-weight: 400;

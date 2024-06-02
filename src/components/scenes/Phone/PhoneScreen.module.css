@@ -17,7 +17,7 @@
 
 .screen {
 	height: 70vh;
-	width: 20vw;
+	width: 22vw;
 	border: 12px solid black;
 	box-shadow: 10px 10px 0px rgba(0, 0, 0, 0.25);
 	border-radius: 30px;
@@ -55,20 +55,37 @@
 .screen footer button:hover {
 	background-color: rgba(0, 0, 0, 0.1);
 }
-@media (max-width: 1024px) {
+
+@media (max-width: 1366px) {
 	.screen {
 		height: 80vh;
 		width: 24vw;
-		border: 6px solid black;
+		border: 8px solid black;
 		box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.25);
 		border-radius: 20px;
 	}
 	.screen header {
-		font-size: 12px;
-		padding: 10px 10px 0;
+		font-size: 18px;
+		padding: 14px 14px 0;
 	}
 	.screen header svg {
 		width: 6vw;
+	}
+	.screen footer button {
+		padding: 15px;
+	}
+	.screen footer button svg {
+		height: 15px;
+	}
+}
+
+@media (max-width: 1024px) {
+	.screen {
+		border: 6px solid black;
+	}
+	.screen header {
+		font-size: 12px;
+		padding: 10px 10px 0;
 	}
 	.screen footer button {
 		padding: 10px;

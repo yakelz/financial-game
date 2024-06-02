@@ -10,6 +10,17 @@
 	width: 26vw;
 }
 
+@media (max-width: 1366px) {
+	.character {
+		width: 180px;
+		bottom: -140px;
+	}
+	.onMenu {
+		width: 30vw;
+		left: 15%;
+	}
+}
+
 @media (max-width: 1024px) {
 	.character {
 		width: 150px;

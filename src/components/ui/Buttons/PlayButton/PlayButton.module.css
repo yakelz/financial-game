@@ -9,6 +9,13 @@
 	height: 300px;
 }
 
+@media (max-width: 1366px) {
+	.button svg {
+		width: 200px;
+		height: 200px;
+	}
+}
+
 @media (max-width: 1024px) {
 	.button svg {
 		width: 120px;

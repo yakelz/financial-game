@@ -64,7 +64,7 @@ input[type='search']::-webkit-search-results-decoration {
 	height: 40px;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1366px) {
 	h3 {
 		font-size: 30px;
 	}
@@ -78,6 +78,9 @@ input[type='search']::-webkit-search-results-decoration {
 	.search input[type='search'] {
 		font-size: 24px;
 	}
+}
+
+@media (max-width: 1024px) {
 	.results .search form {
 		padding: 5px 15px;
 	}

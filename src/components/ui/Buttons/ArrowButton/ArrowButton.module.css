@@ -1,6 +1,14 @@
 .button {
 	z-index: var(--z-move-arrows);
 }
+
+@media (max-width: 1366px) {
+	.button svg {
+		width: 80px;
+		height: 80px;
+	}
+}
+
 @media (max-width: 1024px) {
 	.button svg {
 		width: 70px;

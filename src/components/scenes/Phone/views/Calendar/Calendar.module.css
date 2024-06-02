@@ -59,6 +59,16 @@
 .task {
 	width: 70%;
 }
+
+@media (max-width: 1366px) {
+	.time {
+		font-size: 20px;
+	}
+	.task {
+		font-size: 16px;
+	}
+}
+
 @media (max-width: 1024px) {
 	.container main {
 		margin: 50px 0;

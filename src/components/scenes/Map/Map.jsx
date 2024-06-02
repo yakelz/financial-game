@@ -101,7 +101,7 @@ function Map() {
 					<div className={styles.dayText}>День {currentAction.day}.</div>
 				</div>
 			)}
-			{pulseRef && <Pulse targetRef={getCurrentRef()} />}
+			{pulseRef && getCurrentRef() && <Pulse targetRef={getCurrentRef()} />}
 			<main>
 				<ActionComponent />
 

@@ -44,6 +44,18 @@
 	border-top: 15px solid #c7dfe0;
 }
 
+@media (max-width: 1366px) {
+	.container {
+		position: fixed;
+		bottom: 150px;
+		left: 200px;
+	}
+	.notification {
+		font-size: 20px;
+		width: 30vw;
+	}
+}
+
 @media (max-width: 1024px) {
 	.container {
 		position: fixed;

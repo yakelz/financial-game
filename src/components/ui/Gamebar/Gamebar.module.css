@@ -25,11 +25,18 @@
 	height: 105px;
 }
 
+@media (max-width: 1366px) {
+	.gamebar {
+		padding: 18px;
+		padding-left: 160px;
+		box-shadow: 4px 10px 0px rgba(0, 0, 0, 0.25);
+	}
+}
+
 @media (max-width: 1024px) {
 	.gamebar {
 		padding: 10px;
 		padding-left: 130px;
-		box-shadow: 4px 10px 0px rgba(0, 0, 0, 0.25);
 	}
 
 	.gamebar img {

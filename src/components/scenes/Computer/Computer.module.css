@@ -5,6 +5,13 @@
 	z-index: 2;
 }
 
+@media (max-width: 1366px) {
+	.close {
+		top: 35px;
+		right: 45px;
+	}
+}
+
 @media (max-width: 1024px) {
 	.close svg {
 		width: 40px;

@@ -107,6 +107,34 @@
 	}
 }
 
+@media (max-width: 1366px) {
+	.question {
+		left: 11%;
+		width: 30vw;
+		padding: 18px;
+		font-size: 20px;
+	}
+	.answer {
+		top: 14%;
+		right: 3%;
+		font-size: 20px;
+		padding: 18px 12px;
+		width: 35vw;
+	}
+	.speech {
+		padding: 16px;
+	}
+	.choices {
+		width: 50vw;
+		padding: 18px 12px;
+		gap: 14px;
+	}
+	.choice {
+		font-size: 20px;
+		padding: 18px;
+	}
+}
+
 @media (max-width: 1024px) {
 	.question {
 		left: 15%;

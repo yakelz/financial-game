@@ -12,8 +12,9 @@ import grandmother from '@core/data/dialogues/grandmother';
 const GameComponent = () => {
 	const { setView, setOfficeSubView } = useViewStore();
 	const { setVoiceSource, playEffectSound } = useAudio();
-	const { setDialog } = useDialogStore();
+	const { setDialog, resetDialog } = useDialogStore();
 	useEffect(() => {
+		resetDialog();
 		setDialog(grandmother);
 		playEffectSound('./Audio/Sounds/door_knock.mp3');
 		const timer = setTimeout(() => {
