@@ -4,7 +4,7 @@ import useGameStore from '@core/store/useGameStore';
 
 import 'swiper/css';
 import 'swiper/css/pagination';
-import './SwiperStyles.css';
+import '../SwiperStyles.css';
 
 import { Pagination } from 'swiper/modules';
 

@@ -29,7 +29,7 @@
 	display: none;
 }
 .applications button {
-	max-width: 8vw;
+	width: 8vw;
 	height: 18vh;
 	padding: 20px;
 	transition: transform 0.2s;
@@ -43,7 +43,7 @@
 }
 
 .applications button span {
-	font-size: 30px;
+	font-size: 24px;
 	color: white;
 	text-shadow: 3px 3px 0 rgba(0, 0, 0, 0.25);
 	font-family: 'Mplus';

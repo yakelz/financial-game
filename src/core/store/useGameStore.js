@@ -56,10 +56,21 @@ const useGameStore = create(
 						return { reminders };
 					}),
 
+				// Case progress
 				caseProgress: 0,
 				nextCaseProgress: () =>
 					set((state) => ({
 						caseProgress: state.caseProgress !== 7 ? state.caseProgress + 1 : state.caseProgress,
+					})),
+
+				// Reset Game State
+				resetGame: () =>
+					set(() => ({
+						currentActionIndex: 0,
+						emails: [],
+						reminders: [],
+						caseItems: [],
+						caseProgress: 0,
 					})),
 			}),
 			{
@@ -70,6 +81,7 @@ const useGameStore = create(
 					emails: state.emails,
 					reminders: state.reminders,
 					caseItems: state.caseItems,
+					caseProgress: state.caseProgress,
 				}),
 			}
 		)

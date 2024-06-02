@@ -1,9 +1,9 @@
 import React, { useEffect, useRef } from 'react';
 
-import styles from './IntroVideo.module.css';
+import styles from './Cutscene.module.css';
 import { useAudio } from '@core/audio/AudioContext';
 
-function IntroVideo({ onSkip }) {
+function Cutscene({ videoSrc, onSkip }) {
 	const videoRef = useRef(null);
 	const { musicVolume } = useAudio();
 
@@ -20,8 +20,8 @@ function IntroVideo({ onSkip }) {
 
 	return (
 		<div className={styles.video}>
-			<video ref={videoRef} width='100%' height='100%' autoPlay onEnded={onSkip} playsInline>
-				<source src='./Video/intro.mp4' type='video/mp4' />
+			<video ref={videoRef} autoPlay onEnded={onSkip} playsInline>
+				<source src={videoSrc} type='video/mp4' />
 				Ваш браузер не поддерживает видеотег.
 			</video>
 			<button onClick={onSkip} className={styles.button}>
@@ -31,4 +31,4 @@ function IntroVideo({ onSkip }) {
 	);
 }
 
-export default IntroVideo;
+export default Cutscene;

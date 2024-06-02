@@ -1,7 +1,7 @@
 .question {
 	position: fixed;
-	bottom: 20%;
-	left: 8%;
+	bottom: 24%;
+	left: 10%;
 	z-index: var(--z-dialog);
 
 	color: white;
@@ -98,6 +98,13 @@
 	background-size: 100% 100%;
 	background-repeat: no-repeat;
 	display: block;
+}
+
+@media (min-width: 1921px) {
+	.question {
+		bottom: 20%;
+		left: 8%;
+	}
 }
 
 @media (max-width: 1024px) {
