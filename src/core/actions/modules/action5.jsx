@@ -4,8 +4,9 @@ import useViewStore from '@core/store/useViewStore';
 import { useNotification } from '@core/notification/useNotification';
 import { useAudio } from '@core/audio/AudioContext';
 import useGameStore from '@core/store/useGameStore';
-
+import useDialogStore from '@core/store/useDialogStore';
 import remindersList from '@core/data/reminders';
+import grandmother from '@core/data/dialogues/grandmother';
 
 const GameComponent = () => {
 	const { setView, setPulseRef, setOfficeSubView } = useViewStore();
@@ -14,10 +15,14 @@ const GameComponent = () => {
 
 	const { reminders, addReminder } = useGameStore();
 
+	const { setDialog, resetDialog } = useDialogStore();
+
 	useEffect(() => {
 		if (reminders.length === 0) {
 			addReminder(remindersList[0]);
 		}
+		resetDialog();
+		setDialog(grandmother);
 
 		setView('map');
 		setOfficeSubView('front');
